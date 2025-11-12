@@ -8,6 +8,7 @@ namespace SistemaBibliotecaPoo.Models.Usuario
 {
     public abstract class Usuario
     {
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
