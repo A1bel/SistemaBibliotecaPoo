@@ -53,7 +53,7 @@ namespace SistemaBibliotecaPoo.Repositories
         public void Atualizar(Usuario usuarioAtualizado)
         {
             var existente = Buscar(usuarioAtualizado.Id);
-            if (existente == null) return;
+            if (existente == null) throw new ArgumentException("Usuário não encontrado");
 
             int index = _usuarios.IndexOf(existente);
             _usuarios[index] = usuarioAtualizado;
@@ -63,12 +63,10 @@ namespace SistemaBibliotecaPoo.Repositories
         public void Remover(int id)
         {
             Usuario usuario = Buscar(id);
-            if(usuario != null)
-            {
-                _usuarios.Remove(usuario);
-                Salvar();
-            }
-
+            if (usuario == null) throw new ArgumentException("Usuário não encontrado");
+                
+            _usuarios.Remove(usuario);
+            Salvar();
         }
 
         private List<Usuario> Carregar()
