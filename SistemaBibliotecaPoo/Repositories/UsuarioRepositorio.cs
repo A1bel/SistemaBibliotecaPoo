@@ -45,6 +45,11 @@ namespace SistemaBibliotecaPoo.Repositories
             return _usuarios.Find(u =>  u.Id == id);
         }
 
+        public Usuario BuscarPorEmail(string email)
+        {
+            return _usuarios.FirstOrDefault(u => u.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
+        }
+
         public List<Usuario> BuscarTodos()
         {
             return new List<Usuario>(_usuarios);

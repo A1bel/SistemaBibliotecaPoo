@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaBibliotecaPoo.Models
 {
-    class ResultadoValidacao
+    class ResultadoOperacao
     {
         public bool Success { get; set; }
         public Dictionary<string, string> Erros { get; set; } = new Dictionary<string, string>();

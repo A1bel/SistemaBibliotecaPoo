@@ -13,9 +13,9 @@ namespace SistemaBibliotecaPoo.Controllers
     {
         private readonly UsuarioRepositorio _usuarioRepositorio = UsuarioRepositorio.Instancia;
         
-        public ResultadoValidacao CadastrarUsuario(string tipo, string nome, string telefone, string email, string senha)
+        public ResultadoOperacao CadastrarUsuario(string tipo, string nome, string telefone, string email, string senha)
         {
-            ResultadoValidacao result = ValidarUsuario(nome, email, telefone, senha);
+            ResultadoOperacao result = ValidarUsuario(nome, email, telefone, senha);
             if (!result.Success)
                 return result;
 
@@ -33,6 +33,35 @@ namespace SistemaBibliotecaPoo.Controllers
             }
         }
 
+        public ResultadoOperacao Login(string email, string senha)
+        {
+            ResultadoOperacao result = new ResultadoOperacao { Success = true };    
+
+            if(string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senha))
+            {
+                result.Erros.Add("geral", "Preencha todos os campos");
+                result.Success = false;
+                return result;
+            }
+
+            try
+            {
+                Usuario usuario = _usuarioRepositorio.BuscarPorEmail(email);
+                if(usuario == null || usuario.Senha != senha)
+                {
+                    result.Erros.Add("geral", "Email e/ou senha inválidos");
+                    result.Success = false;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Erros.Add("geral", "Ocorreu um erro inesperado ao efetuar login");
+                result.Success = false;
+            }
+            return result;
+        }
+
         public Usuario BuscarUsuario(int id)
         {
             return _usuarioRepositorio.Buscar(id);
@@ -43,9 +72,9 @@ namespace SistemaBibliotecaPoo.Controllers
             return _usuarioRepositorio.BuscarTodos();
         }
 
-        public ResultadoValidacao AtualizarUsuario(Usuario usuario)
+        public ResultadoOperacao AtualizarUsuario(Usuario usuario)
         {
-            ResultadoValidacao result = ValidarUsuario(usuario.Nome, usuario.Telefone, usuario.Email, usuario.Senha);
+            ResultadoOperacao result = ValidarUsuario(usuario.Nome, usuario.Telefone, usuario.Email, usuario.Senha);
             if (!result.Success)
                 return result;
 
@@ -61,20 +90,30 @@ namespace SistemaBibliotecaPoo.Controllers
             }
         }
 
-        public void RemoverUsuari(int id)
+        public ResultadoOperacao RemoverUsuario(int id)
         {
+            ResultadoOperacao result = new ResultadoOperacao { Success = true };
             try
             {
+                _usuarioRepositorio.Remover(id);
+                return result;
+
+            }catch(ArgumentException ex)
+            {
+                result.Erros.Add("geral", ex.Message);
+                result.Success = false;
 
             }catch(Exception ex)
             {
-
+                result.Erros.Add("geral", "Ocorreu um erro inesperado ao remover usuário");
+                result.Success = false; 
             }
+            return result;
         }
 
-        private ResultadoValidacao ValidarUsuario(string nome, string telefone, string email, string senha)
+        private ResultadoOperacao ValidarUsuario(string nome, string telefone, string email, string senha)
         {
-            ResultadoValidacao result = new ResultadoValidacao { Success = true };
+            ResultadoOperacao result = new ResultadoOperacao { Success = true };
 
             if (string.IsNullOrWhiteSpace(nome))
             {
