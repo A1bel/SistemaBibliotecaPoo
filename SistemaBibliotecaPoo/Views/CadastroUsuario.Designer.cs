@@ -38,6 +38,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.confirmaSenhaTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cancelarBtn = new System.Windows.Forms.Button();
+            this.salvarBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -122,11 +125,41 @@
             this.label5.Text = "Confirme a senha";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(91, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(194, 16);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Dados do Cadastro de Usuário";
+            // 
+            // cancelarBtn
+            // 
+            this.cancelarBtn.Location = new System.Drawing.Point(468, 388);
+            this.cancelarBtn.Name = "cancelarBtn";
+            this.cancelarBtn.Size = new System.Drawing.Size(117, 36);
+            this.cancelarBtn.TabIndex = 25;
+            this.cancelarBtn.Text = "Cancelar";
+            this.cancelarBtn.UseVisualStyleBackColor = true;
+            // 
+            // salvarBtn
+            // 
+            this.salvarBtn.Location = new System.Drawing.Point(629, 388);
+            this.salvarBtn.Name = "salvarBtn";
+            this.salvarBtn.Size = new System.Drawing.Size(117, 36);
+            this.salvarBtn.TabIndex = 24;
+            this.salvarBtn.Text = "Salvar";
+            this.salvarBtn.UseVisualStyleBackColor = true;
+            // 
             // CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 590);
+            this.Controls.Add(this.cancelarBtn);
+            this.Controls.Add(this.salvarBtn);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.confirmaSenhaTxt);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.senhaTxt);
@@ -157,5 +190,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox confirmaSenhaTxt;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button cancelarBtn;
+        private System.Windows.Forms.Button salvarBtn;
     }
 }
