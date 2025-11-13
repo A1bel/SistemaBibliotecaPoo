@@ -79,7 +79,7 @@
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Models\Emprestimo.cs" />
     <Compile Include="Models\Livro.cs" />
-    <Compile Include="Models\ResultadoValidacao.cs" />
+    <Compile Include="Models\ResultadoOperacao.cs" />
     <Compile Include="Models\Usuario\Admin.cs" />
     <Compile Include="Models\Usuario\Leitor.cs" />
     <Compile Include="Models\Usuario\PerfilFactory.cs" />
