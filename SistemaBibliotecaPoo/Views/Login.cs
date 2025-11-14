@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SistemaBibliotecaPoo.Controllers;
+using SistemaBibliotecaPoo.Models;
+using SistemaBibliotecaPoo.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +15,34 @@ namespace SistemaBibliotecaPoo
 {
     public partial class Login : Form
     {
+        private readonly UsuarioController _usuarioController;
         public Login()
         {
             InitializeComponent();
+            _usuarioController = new UsuarioController();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void entrarBtn_Click(object sender, EventArgs e)
         {
+            erroLbl.Text = "";
 
+            ResultadoOperacao result = _usuarioController.Login(emailTxt.Text, senhaTxt.Text);
+            if (!result.Success)
+            {
+                erroLbl.Text = result.Erros["geral"];
+                return;
+            }
+
+            //direcionar para pagina principal
+
+        }
+
+        private void contaLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CadastroUsuario frmCadastro = new CadastroUsuario();
+            frmCadastro.FormClosed += (s, args) => this.Show();
+            frmCadastro.Show();
+            this.Hide();
         }
     }
 }
