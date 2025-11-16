@@ -13,15 +13,15 @@ namespace SistemaBibliotecaPoo.Controllers
     {
         private readonly UsuarioRepositorio _usuarioRepositorio = UsuarioRepositorio.Instancia;
         
-        public ResultadoOperacao CadastrarUsuario(string tipo, string nome, string telefone, string email, string senha)
+        public ResultadoOperacao CadastrarUsuario(UsuarioDto usuarioDto)
         {
-            ResultadoOperacao result = ValidarUsuario(nome, email, telefone, senha);
+            ResultadoOperacao result = ValidarUsuario(usuarioDto);
             if (!result.Success)
                 return result;
 
             try
             {
-                Usuario usuario = PerfilFactory.CriarUsuario(tipo, nome, telefone, email, senha);
+                Usuario usuario = PerfilFactory.CriarUsuario(usuarioDto.Tipo, usuarioDto.Nome, usuarioDto.Telefone, usuarioDto.Email, usuarioDto.Senha);
                 _usuarioRepositorio.Adicionar(usuario);
                 return result;
             }
@@ -72,15 +72,34 @@ namespace SistemaBibliotecaPoo.Controllers
             return _usuarioRepositorio.BuscarTodos();
         }
 
-        public ResultadoOperacao AtualizarUsuario(Usuario usuario)
+        public ResultadoOperacao AtualizarUsuario(UsuarioDto usuarioDto)
         {
-            ResultadoOperacao result = ValidarUsuario(usuario.Nome, usuario.Telefone, usuario.Email, usuario.Senha);
+            ResultadoOperacao result = new ResultadoOperacao();
+
+            Usuario existente = _usuarioRepositorio.Buscar(usuarioDto.Id);
+            if (existente == null)
+            {
+                result.Erros.Add("geral", "Usuário não encontrado");
+                result.Success = false;
+                return result;
+            }
+
+            result = ValidarUsuario(usuarioDto, true);
             if (!result.Success)
                 return result;
 
+            existente.Nome = usuarioDto.Nome;
+            existente.Email = usuarioDto.Email;
+            existente.Telefone = usuarioDto.Telefone;
+
+            if (!string.IsNullOrWhiteSpace(usuarioDto.Senha))
+            {
+                existente.Senha = usuarioDto.Senha;
+            }
+
             try
             {
-                _usuarioRepositorio.Atualizar(usuario);
+                _usuarioRepositorio.Atualizar(existente);
                 return result;
             }catch (Exception ex)
             {
@@ -111,33 +130,90 @@ namespace SistemaBibliotecaPoo.Controllers
             return result;
         }
 
-        private ResultadoOperacao ValidarUsuario(string nome, string telefone, string email, string senha)
+        private ResultadoOperacao ValidarUsuario(UsuarioDto usuarioDto, bool isUpdate = false)
         {
             ResultadoOperacao result = new ResultadoOperacao { Success = true };
 
-            if (string.IsNullOrWhiteSpace(nome))
+            if (string.IsNullOrWhiteSpace(usuarioDto.Nome))
             {
                 result.Erros.Add("nome", "Nome não informado");
                 result.Success = false;
             }
 
-            if (string.IsNullOrEmpty(email))
+            if (string.IsNullOrWhiteSpace(usuarioDto.Email))
             {
-                result.Erros.Add("email", "Email nâo informado");
+                result.Erros.Add("email", "Email não informado");
+                result.Success = false;
+            }
+            else
+            {
+                Usuario existe = _usuarioRepositorio.BuscarPorEmail(usuarioDto.Email);
+                if(!isUpdate && existe != null)
+                {
+                    result.Erros.Add("email", "Já existe um usuário com este email");
+                    result.Success = false;
+                }
+                else if (isUpdate && existe != null && existe.Id != usuarioDto.Id)
+                {
+                    result.Erros.Add("email", "Já existe um usuário com este email.");
+                    result.Success = false;
+                }
+            }
+
+            if (string.IsNullOrWhiteSpace(usuarioDto.Telefone))
+            {
+                result.Erros.Add("telefone", "Telefone não informado");
                 result.Success = false;
             }
 
-            if (string.IsNullOrEmpty(telefone))
+            bool alterandoSenha = !string.IsNullOrWhiteSpace(usuarioDto.Senha) || !string.IsNullOrWhiteSpace(usuarioDto.ConfirmarSenha);
+            if (!isUpdate || alterandoSenha)
             {
-                result.Erros.Add("telefone", "Telefone nâo informado");
-                result.Success = false;
+
+                if (string.IsNullOrWhiteSpace(usuarioDto.Senha))
+                {
+                    result.Erros.Add("senha", "Nova senha não informada");
+                    result.Success = false;
+                }
+                else if (usuarioDto.Senha.Length < 8)
+                {
+                    result.Erros.Add("senha", "Senha deve conter no mínimo 8 caracteres");
+                    result.Success = false;
+                }
+
+                if (string.IsNullOrWhiteSpace(usuarioDto.ConfirmarSenha))
+                {
+                    result.Erros.Add("CSenha", "Confirmação de senha não informada");
+                    result.Success = false;
+                }
+                else if (usuarioDto.ConfirmarSenha.Length < 8)
+                {
+                    result.Erros.Add("CSenha", "Senha deve conter no mínimo 8 caracteres");
+                    result.Success = false;
+                }
+
+                if (!(string.IsNullOrWhiteSpace(usuarioDto.Senha) || string.IsNullOrWhiteSpace(usuarioDto.ConfirmarSenha))
+                    && (usuarioDto.Senha.Length >= 8 && usuarioDto.ConfirmarSenha.Length >= 8) && usuarioDto.Senha != usuarioDto.ConfirmarSenha)
+                {
+                    result.Erros.Add("senha", "As senhas não coincidem.");
+                    result.Success = false;
+                }
+
+                if (isUpdate && alterandoSenha && string.IsNullOrWhiteSpace(usuarioDto.SenhaAtual))
+                {
+                    result.Erros.Add("senhaAtual", "Senha atual não informada.");
+                    result.Success = false;
+                }else if (isUpdate && alterandoSenha)
+                {
+                    Usuario existe = _usuarioRepositorio.Buscar(usuarioDto.Id);
+                    if(existe.Senha != usuarioDto.SenhaAtual)
+                    {
+                        result.Erros.Add("senhaAtual", "Senha atual incorreta.");
+                        result.Success = false;
+                    }
+                }
             }
 
-            if (string.IsNullOrEmpty(senha))
-            {
-                result.Erros.Add("senha", "Senha nâo informado");
-                result.Success = false;
-            }
 
             return result;
         }

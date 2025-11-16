@@ -84,6 +84,7 @@
     <Compile Include="Models\Usuario\Leitor.cs" />
     <Compile Include="Models\Usuario\PerfilFactory.cs" />
     <Compile Include="Models\Usuario\Usuario.cs" />
+    <Compile Include="Models\Usuario\UsuarioDto.cs" />
     <Compile Include="Repositories\EmprestimoRepositorio.cs" />
     <Compile Include="Repositories\LivroRepositorio.cs" />
     <Compile Include="Repositories\UsuarioRepositorio.cs" />

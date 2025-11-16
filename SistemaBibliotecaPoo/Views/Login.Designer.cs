@@ -58,7 +58,7 @@
             // emailTxt
             // 
             this.emailTxt.Location = new System.Drawing.Point(136, 88);
-            this.emailTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTxt.Margin = new System.Windows.Forms.Padding(2);
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(76, 20);
             this.emailTxt.TabIndex = 1;
@@ -66,7 +66,7 @@
             // senhaTxt
             // 
             this.senhaTxt.Location = new System.Drawing.Point(136, 143);
-            this.senhaTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.senhaTxt.Margin = new System.Windows.Forms.Padding(2);
             this.senhaTxt.Name = "senhaTxt";
             this.senhaTxt.Size = new System.Drawing.Size(76, 20);
             this.senhaTxt.TabIndex = 3;
@@ -84,7 +84,7 @@
             // entrarBtn
             // 
             this.entrarBtn.Location = new System.Drawing.Point(136, 200);
-            this.entrarBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.entrarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.entrarBtn.Name = "entrarBtn";
             this.entrarBtn.Size = new System.Drawing.Size(56, 19);
             this.entrarBtn.TabIndex = 4;
@@ -95,6 +95,7 @@
             // erroLbl
             // 
             this.erroLbl.AutoSize = true;
+            this.erroLbl.ForeColor = System.Drawing.Color.Red;
             this.erroLbl.Location = new System.Drawing.Point(133, 22);
             this.erroLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.erroLbl.Name = "erroLbl";
@@ -124,7 +125,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.emailTxt);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Text = "Form1";
             this.ResumeLayout(false);
