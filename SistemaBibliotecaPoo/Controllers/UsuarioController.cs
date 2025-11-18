@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SistemaBibliotecaPoo.Controllers
 {
-    class UsuarioController
+    public class UsuarioController
     {
         private readonly UsuarioRepositorio _usuarioRepositorio = UsuarioRepositorio.Instancia;
         
@@ -23,14 +23,13 @@ namespace SistemaBibliotecaPoo.Controllers
             {
                 Usuario usuario = PerfilFactory.CriarUsuario(usuarioDto.Tipo, usuarioDto.Nome, usuarioDto.Telefone, usuarioDto.Email, usuarioDto.Senha);
                 _usuarioRepositorio.Adicionar(usuario);
-                return result;
             }
             catch(Exception ex)
             {
                 result.Erros.Add("geral", "Ocorreu um erro ao cadastrar usuário");
                 result.Success = false;
-                return result;
             }
+                return result;
         }
 
         public ResultadoOperacao Login(string email, string senha)
@@ -100,13 +99,12 @@ namespace SistemaBibliotecaPoo.Controllers
             try
             {
                 _usuarioRepositorio.Atualizar(existente);
-                return result;
             }catch (Exception ex)
             {
                 result.Erros.Add("geral", "Ocorreu um erro ao atualizar usuário");
                 result.Success = false;
-                return result;
             }
+                return result;
         }
 
         public ResultadoOperacao RemoverUsuario(int id)

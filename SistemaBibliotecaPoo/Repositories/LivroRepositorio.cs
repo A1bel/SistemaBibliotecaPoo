@@ -42,7 +42,7 @@ namespace SistemaBibliotecaPoo.Repositories
 
         public Livro Buscar(int id)
         {
-            return _livros.Find(u => u.Id == id);
+            return _livros.Find(l => l.Id == id);
         }
 
         public List<Livro> BuscarTodos()
@@ -63,11 +63,11 @@ namespace SistemaBibliotecaPoo.Repositories
         public void Remover(int id)
         {
             Livro livro = Buscar(id);
-            if (livro != null)
-            {
-                _livros.Remove(livro);
-                Salvar();
-            }
+            if (livro == null) throw new ArgumentException("Livro não encontrado");
+
+            _livros.Remove(livro);
+            Salvar();
+            
 
         }
         private List<Livro> Carregar()

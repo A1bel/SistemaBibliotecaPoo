@@ -12,6 +12,7 @@ namespace SistemaBibliotecaPoo.Models.Usuario
         public string Titulo { get; set; }
         public string Autor { get; set; }
         public string Categoria { get; set; }
+        public int Quantidade { get; set; }
         public bool Disponivel { get; set; }
     }
 }
