@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLivrosPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flowLivrosPanel
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(21, 55);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(759, 383);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLivrosPanel.Location = new System.Drawing.Point(21, 55);
+            this.flowLivrosPanel.Name = "flowLivrosPanel";
+            this.flowLivrosPanel.Size = new System.Drawing.Size(759, 383);
+            this.flowLivrosPanel.TabIndex = 0;
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flowLivrosPanel);
             this.Name = "HomeForm";
             this.Text = "HomeForm";
             this.Load += new System.EventHandler(this.HomeForm_Load);
@@ -53,6 +53,6 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLivrosPanel;
     }
 }

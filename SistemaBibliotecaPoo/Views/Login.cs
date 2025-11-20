@@ -33,7 +33,10 @@ namespace SistemaBibliotecaPoo
                 return;
             }
 
-            //direcionar para pagina principal
+            HomeForm home = new HomeForm();
+            home.FormClosed += (s, args) => this.Close();
+            home.Show();
+            this.Hide();
 
         }
 
