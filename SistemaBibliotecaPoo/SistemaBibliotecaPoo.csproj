@@ -95,11 +95,23 @@
     <Compile Include="Repositories\EmprestimoRepositorio.cs" />
     <Compile Include="Repositories\LivroRepositorio.cs" />
     <Compile Include="Repositories\UsuarioRepositorio.cs" />
+    <Compile Include="Views\CadastroLivros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CadastroLivros.Designer.cs">
+      <DependentUpon>CadastroLivros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\CadastroUsuario.Designer.cs">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EdicaoLivros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EdicaoLivros.Designer.cs">
+      <DependentUpon>EdicaoLivros.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\EditarUsuario.cs">
       <SubType>Form</SubType>
@@ -133,8 +145,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\CadastroLivros.resx">
+      <DependentUpon>CadastroLivros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EdicaoLivros.resx">
+      <DependentUpon>EdicaoLivros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EditarUsuario.resx">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
