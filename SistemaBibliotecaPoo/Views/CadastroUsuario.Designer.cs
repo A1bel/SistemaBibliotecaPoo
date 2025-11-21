@@ -46,7 +46,7 @@
             this.usuarioNome = new System.Windows.Forms.Label();
             this.nomeTxt = new System.Windows.Forms.TextBox();
             this.cancelarBtn = new System.Windows.Forms.Button();
-            this.cadastroBtn = new System.Windows.Forms.Button();
+            this.salvarBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -213,17 +213,19 @@
             this.cancelarBtn.TabIndex = 56;
             this.cancelarBtn.Text = "Cancelar";
             this.cancelarBtn.UseVisualStyleBackColor = true;
+            this.cancelarBtn.Click += new System.EventHandler(this.cancelarBtn_Click);
             // 
-            // cadastroBtn
+            // salvarBtn
             // 
-            this.cadastroBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cadastroBtn.ForeColor = System.Drawing.Color.ForestGreen;
-            this.cadastroBtn.Location = new System.Drawing.Point(645, 415);
-            this.cadastroBtn.Name = "cadastroBtn";
-            this.cadastroBtn.Size = new System.Drawing.Size(134, 38);
-            this.cadastroBtn.TabIndex = 55;
-            this.cadastroBtn.Text = "Salvar";
-            this.cadastroBtn.UseVisualStyleBackColor = true;
+            this.salvarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salvarBtn.ForeColor = System.Drawing.Color.ForestGreen;
+            this.salvarBtn.Location = new System.Drawing.Point(645, 415);
+            this.salvarBtn.Name = "salvarBtn";
+            this.salvarBtn.Size = new System.Drawing.Size(134, 38);
+            this.salvarBtn.TabIndex = 55;
+            this.salvarBtn.Text = "Salvar";
+            this.salvarBtn.UseVisualStyleBackColor = true;
+            this.salvarBtn.Click += new System.EventHandler(this.salvarBtn_Click);
             // 
             // CadastroUsuario
             // 
@@ -231,7 +233,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 497);
             this.Controls.Add(this.cancelarBtn);
-            this.Controls.Add(this.cadastroBtn);
+            this.Controls.Add(this.salvarBtn);
             this.Controls.Add(this.quantidade);
             this.Controls.Add(this.confimarSenhaTxt);
             this.Controls.Add(this.erroEmailLbl);
@@ -276,6 +278,6 @@
         private System.Windows.Forms.Label usuarioNome;
         private System.Windows.Forms.TextBox nomeTxt;
         private System.Windows.Forms.Button cancelarBtn;
-        private System.Windows.Forms.Button cadastroBtn;
+        private System.Windows.Forms.Button salvarBtn;
     }
 }

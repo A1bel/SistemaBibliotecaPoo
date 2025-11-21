@@ -13,11 +13,20 @@ namespace SistemaBibliotecaPoo.Controllers
     {
         private readonly LivroRepositorio _livroRepositorio = LivroRepositorio.Instancia;
 
-        public ResultadoOperacao CadastrarLivro(Livro livro)
+        public ResultadoOperacao CadastrarLivro(LivroDto livroDto)
         {
-            ResultadoOperacao result = ValidarLivro(livro);
+            ResultadoOperacao result = ValidarLivro(livroDto);
             if(!result.Success)
                 return result;
+
+            Livro livro = new Livro
+            {
+                Titulo = livroDto.Titulo,
+                Autor = livroDto.Autor,
+                Categoria = livroDto.Categoria,
+                Preco = Convert.ToDouble(livroDto.Preco),
+                Quantidade = Convert.ToInt32(livroDto.Quantidade)
+            };
 
             try
             {
@@ -41,34 +50,34 @@ namespace SistemaBibliotecaPoo.Controllers
             return _livroRepositorio.BuscarTodos();
         }
 
-        public ResultadoOperacao AtualizarLivro(Livro livro)
-        {
-            ResultadoOperacao result = new ResultadoOperacao();
+        //public ResultadoOperacao AtualizarLivro(Livro livro)
+        //{
+        //    ResultadoOperacao result = new ResultadoOperacao();
 
-            Livro existente = _livroRepositorio.Buscar(livro.Id);
-            if(existente == null)
-            {
-                result.Erros.Add("geral", "Livro não encontrado");
-                result.Success = false;
-                return result;
-            }
+        //    Livro existente = _livroRepositorio.Buscar(livro.Id);
+        //    if(existente == null)
+        //    {
+        //        result.Erros.Add("geral", "Livro não encontrado");
+        //        result.Success = false;
+        //        return result;
+        //    }
 
-            result = ValidarLivro(livro);
-            if (!result.Success)
-                return result;
+        //    result = ValidarLivro(livro);
+        //    if (!result.Success)
+        //        return result;
 
-            try
-            {
-                _livroRepositorio.Atualizar(livro);
+        //    try
+        //    {
+        //        _livroRepositorio.Atualizar(livro);
 
-            }
-            catch (Exception ex)
-            {
-                result.Erros.Add("geral", "Ocorreu um erro ao atualizar o livro");
-                result.Success = false;
-            }
-            return result;
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        result.Erros.Add("geral", "Ocorreu um erro ao atualizar o livro");
+        //        result.Success = false;
+        //    }
+        //    return result;
+        //}
 
         public ResultadoOperacao RemoverLivro(int id)
         {
@@ -90,7 +99,7 @@ namespace SistemaBibliotecaPoo.Controllers
             return result;
         }
 
-        private ResultadoOperacao ValidarLivro(Livro livro)
+        private ResultadoOperacao ValidarLivro(LivroDto livro)
         {
             ResultadoOperacao result = new ResultadoOperacao { Success = true };
 
@@ -112,11 +121,27 @@ namespace SistemaBibliotecaPoo.Controllers
                 result.Success = false;
             }
 
-            if(livro.Quantidade < 0)
+            if(!int.TryParse(livro.Quantidade, out int quantidade))
+            {
+                result.Erros.Add("quantidade", "Quantidade deve ser um número válido");
+                result.Success = false;
+            }else if(quantidade < 0)
             {
                 result.Erros.Add("quantidade", "Quantidade não pode ser menor que zero");
                 result.Success = false;
             }
+
+            if(!double.TryParse(livro.Preco, out double preco))
+            {
+                result.Erros.Add("preco", "Preço deve ser um valor válido");
+                result.Success = false;
+            }else if(preco <= 0)
+            {
+                result.Erros.Add("preco", "Preço deve ser maior que zero");
+                result.Success = false;
+            }
+
+
             return result;
         }
     }

@@ -29,21 +29,46 @@
         private void InitializeComponent()
         {
             this.flowLivrosPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.CadastrarLivroBtn = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLivrosPanel
             // 
-            this.flowLivrosPanel.Location = new System.Drawing.Point(21, 55);
+            this.flowLivrosPanel.Location = new System.Drawing.Point(28, 68);
+            this.flowLivrosPanel.Margin = new System.Windows.Forms.Padding(4);
             this.flowLivrosPanel.Name = "flowLivrosPanel";
-            this.flowLivrosPanel.Size = new System.Drawing.Size(759, 383);
+            this.flowLivrosPanel.Size = new System.Drawing.Size(1012, 471);
             this.flowLivrosPanel.TabIndex = 0;
+            // 
+            // CadastrarLivroBtn
+            // 
+            this.CadastrarLivroBtn.Location = new System.Drawing.Point(820, 22);
+            this.CadastrarLivroBtn.Name = "CadastrarLivroBtn";
+            this.CadastrarLivroBtn.Size = new System.Drawing.Size(129, 39);
+            this.CadastrarLivroBtn.TabIndex = 1;
+            this.CadastrarLivroBtn.Text = "Cadastrar Livro";
+            this.CadastrarLivroBtn.UseVisualStyleBackColor = true;
+            this.CadastrarLivroBtn.Click += new System.EventHandler(this.CadastrarLivroBtn_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(965, 22);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 39);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.CadastrarLivroBtn);
             this.Controls.Add(this.flowLivrosPanel);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HomeForm";
             this.Text = "HomeForm";
             this.Load += new System.EventHandler(this.HomeForm_Load);
@@ -54,5 +79,7 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLivrosPanel;
+        private System.Windows.Forms.Button CadastrarLivroBtn;
+        private System.Windows.Forms.Button button2;
     }
 }
