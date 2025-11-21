@@ -45,7 +45,7 @@ namespace SistemaBibliotecaPoo.Views
                 Telefone = telefoneTxt.Text,
                 Email = emailTxt.Text,
                 Senha = senhaTxt.Text,
-                ConfirmarSenha = confirmaSenhaTxt.Text,
+                ConfirmarSenha = confimarSenhaTxt.Text,
             };
 
             ResultadoOperacao result = _usuarioController.CadastrarUsuario(usuario);
