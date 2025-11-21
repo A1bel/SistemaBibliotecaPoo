@@ -68,7 +68,7 @@
             this.salvarEditarBtn.Location = new System.Drawing.Point(637, 346);
             this.salvarEditarBtn.Name = "salvarEditarBtn";
             this.salvarEditarBtn.Size = new System.Drawing.Size(134, 38);
-            this.salvarEditarBtn.TabIndex = 6;
+            this.salvarEditarBtn.TabIndex = 8;
             this.salvarEditarBtn.Text = "Salvar";
             this.salvarEditarBtn.UseVisualStyleBackColor = true;
             // 
@@ -88,7 +88,7 @@
             this.quantidade.Location = new System.Drawing.Point(26, 286);
             this.quantidade.Name = "quantidade";
             this.quantidade.Size = new System.Drawing.Size(94, 20);
-            this.quantidade.TabIndex = 32;
+            this.quantidade.TabIndex = 15;
             this.quantidade.Text = "Quantidade";
             // 
             // textBox4
@@ -97,7 +97,7 @@
             this.textBox4.Location = new System.Drawing.Point(123, 286);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(318, 27);
-            this.textBox4.TabIndex = 31;
+            this.textBox4.TabIndex = 5;
             // 
             // erroPrecoLbl
             // 
@@ -114,7 +114,7 @@
             this.preco.Location = new System.Drawing.Point(367, 221);
             this.preco.Name = "preco";
             this.preco.Size = new System.Drawing.Size(43, 16);
-            this.preco.TabIndex = 29;
+            this.preco.TabIndex = 14;
             this.preco.Text = "Preço";
             // 
             // textBox3
@@ -123,7 +123,7 @@
             this.textBox3.Location = new System.Drawing.Point(425, 221);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(195, 27);
-            this.textBox3.TabIndex = 28;
+            this.textBox3.TabIndex = 4;
             // 
             // erroCategoriaLbl
             // 
@@ -141,7 +141,7 @@
             this.categoria.Location = new System.Drawing.Point(37, 221);
             this.categoria.Name = "categoria";
             this.categoria.Size = new System.Drawing.Size(81, 20);
-            this.categoria.TabIndex = 26;
+            this.categoria.TabIndex = 13;
             this.categoria.Text = "Categoria";
             // 
             // textBox2
@@ -150,7 +150,7 @@
             this.textBox2.Location = new System.Drawing.Point(123, 221);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(210, 27);
-            this.textBox2.TabIndex = 25;
+            this.textBox2.TabIndex = 3;
             // 
             // erroAutorLbl
             // 
@@ -168,7 +168,7 @@
             this.autor.Location = new System.Drawing.Point(65, 167);
             this.autor.Name = "autor";
             this.autor.Size = new System.Drawing.Size(49, 20);
-            this.autor.TabIndex = 23;
+            this.autor.TabIndex = 12;
             this.autor.Text = "Autor";
             // 
             // textBox1
@@ -177,7 +177,7 @@
             this.textBox1.Location = new System.Drawing.Point(123, 167);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(497, 27);
-            this.textBox1.TabIndex = 22;
+            this.textBox1.TabIndex = 2;
             // 
             // erroTituloLbl
             // 
@@ -195,7 +195,7 @@
             this.tituloLivro.Location = new System.Drawing.Point(65, 113);
             this.tituloLivro.Name = "tituloLivro";
             this.tituloLivro.Size = new System.Drawing.Size(50, 20);
-            this.tituloLivro.TabIndex = 20;
+            this.tituloLivro.TabIndex = 11;
             this.tituloLivro.Text = "Título";
             // 
             // tituloTxt
@@ -204,7 +204,7 @@
             this.tituloTxt.Location = new System.Drawing.Point(121, 108);
             this.tituloTxt.Name = "tituloTxt";
             this.tituloTxt.Size = new System.Drawing.Size(497, 27);
-            this.tituloTxt.TabIndex = 19;
+            this.tituloTxt.TabIndex = 1;
             // 
             // titulo
             // 
@@ -213,7 +213,7 @@
             this.titulo.Location = new System.Drawing.Point(63, 39);
             this.titulo.Name = "titulo";
             this.titulo.Size = new System.Drawing.Size(179, 36);
-            this.titulo.TabIndex = 18;
+            this.titulo.TabIndex = 10;
             this.titulo.Text = "Editar Livro";
             this.titulo.Click += new System.EventHandler(this.titulo_Click);
             // 
@@ -223,7 +223,7 @@
             this.disponivel.Location = new System.Drawing.Point(474, 289);
             this.disponivel.Name = "disponivel";
             this.disponivel.Size = new System.Drawing.Size(71, 16);
-            this.disponivel.TabIndex = 34;
+            this.disponivel.TabIndex = 16;
             this.disponivel.Text = "Disponível";
             // 
             // disponivelBox
@@ -236,10 +236,11 @@
             this.disponivelBox.Location = new System.Drawing.Point(551, 283);
             this.disponivelBox.Name = "disponivelBox";
             this.disponivelBox.Size = new System.Drawing.Size(85, 28);
-            this.disponivelBox.TabIndex = 35;
+            this.disponivelBox.TabIndex = 6;
             // 
             // EdicaoLivros
             // 
+            this.AcceptButton = this.salvarEditarBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);

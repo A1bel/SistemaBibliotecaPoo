@@ -74,7 +74,7 @@
             this.titulo.Location = new System.Drawing.Point(113, 71);
             this.titulo.Name = "titulo";
             this.titulo.Size = new System.Drawing.Size(307, 36);
-            this.titulo.TabIndex = 31;
+            this.titulo.TabIndex = 10;
             this.titulo.Text = "Cadastro de Usuário";
             // 
             // quantidade
@@ -84,22 +84,23 @@
             this.quantidade.Location = new System.Drawing.Point(19, 338);
             this.quantidade.Name = "quantidade";
             this.quantidade.Size = new System.Drawing.Size(141, 20);
-            this.quantidade.TabIndex = 54;
+            this.quantidade.TabIndex = 15;
             this.quantidade.Text = "Confirme a senha";
             // 
             // confimarSenhaTxt
             // 
             this.confimarSenhaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confimarSenhaTxt.Location = new System.Drawing.Point(171, 335);
+            this.confimarSenhaTxt.Location = new System.Drawing.Point(181, 335);
             this.confimarSenhaTxt.Name = "confimarSenhaTxt";
+            this.confimarSenhaTxt.PasswordChar = '*';
             this.confimarSenhaTxt.Size = new System.Drawing.Size(285, 27);
-            this.confimarSenhaTxt.TabIndex = 53;
+            this.confimarSenhaTxt.TabIndex = 5;
             // 
             // erroEmailLbl
             // 
             this.erroEmailLbl.AutoSize = true;
             this.erroEmailLbl.ForeColor = System.Drawing.Color.Red;
-            this.erroEmailLbl.Location = new System.Drawing.Point(470, 253);
+            this.erroEmailLbl.Location = new System.Drawing.Point(480, 253);
             this.erroEmailLbl.Name = "erroEmailLbl";
             this.erroEmailLbl.Size = new System.Drawing.Size(0, 16);
             this.erroEmailLbl.TabIndex = 52;
@@ -108,25 +109,25 @@
             // 
             this.preco.AutoSize = true;
             this.preco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.preco.Location = new System.Drawing.Point(416, 229);
+            this.preco.Location = new System.Drawing.Point(426, 229);
             this.preco.Name = "preco";
             this.preco.Size = new System.Drawing.Size(51, 20);
-            this.preco.TabIndex = 51;
+            this.preco.TabIndex = 13;
             this.preco.Text = "Email";
             // 
             // emailTxt
             // 
             this.emailTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTxt.Location = new System.Drawing.Point(473, 223);
+            this.emailTxt.Location = new System.Drawing.Point(483, 223);
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(281, 27);
-            this.emailTxt.TabIndex = 50;
+            this.emailTxt.TabIndex = 3;
             // 
             // erroSenhaLbl
             // 
             this.erroSenhaLbl.AutoSize = true;
             this.erroSenhaLbl.ForeColor = System.Drawing.Color.Red;
-            this.erroSenhaLbl.Location = new System.Drawing.Point(170, 310);
+            this.erroSenhaLbl.Location = new System.Drawing.Point(180, 310);
             this.erroSenhaLbl.Name = "erroSenhaLbl";
             this.erroSenhaLbl.Size = new System.Drawing.Size(0, 16);
             this.erroSenhaLbl.TabIndex = 49;
@@ -138,22 +139,23 @@
             this.categoria.Location = new System.Drawing.Point(104, 283);
             this.categoria.Name = "categoria";
             this.categoria.Size = new System.Drawing.Size(56, 20);
-            this.categoria.TabIndex = 48;
+            this.categoria.TabIndex = 14;
             this.categoria.Text = "Senha";
             // 
             // senhaTxt
             // 
             this.senhaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.senhaTxt.Location = new System.Drawing.Point(173, 280);
+            this.senhaTxt.Location = new System.Drawing.Point(183, 280);
             this.senhaTxt.Name = "senhaTxt";
+            this.senhaTxt.PasswordChar = '*';
             this.senhaTxt.Size = new System.Drawing.Size(283, 27);
-            this.senhaTxt.TabIndex = 47;
+            this.senhaTxt.TabIndex = 4;
             // 
             // erroTelefoneLbl
             // 
             this.erroTelefoneLbl.AutoSize = true;
             this.erroTelefoneLbl.ForeColor = System.Drawing.Color.Red;
-            this.erroTelefoneLbl.Location = new System.Drawing.Point(170, 256);
+            this.erroTelefoneLbl.Location = new System.Drawing.Point(180, 256);
             this.erroTelefoneLbl.Name = "erroTelefoneLbl";
             this.erroTelefoneLbl.Size = new System.Drawing.Size(0, 16);
             this.erroTelefoneLbl.TabIndex = 46;
@@ -165,22 +167,22 @@
             this.autor.Location = new System.Drawing.Point(87, 226);
             this.autor.Name = "autor";
             this.autor.Size = new System.Drawing.Size(73, 20);
-            this.autor.TabIndex = 45;
+            this.autor.TabIndex = 12;
             this.autor.Text = "Telefone";
             // 
             // telefoneTxt
             // 
             this.telefoneTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.telefoneTxt.Location = new System.Drawing.Point(173, 226);
+            this.telefoneTxt.Location = new System.Drawing.Point(183, 226);
             this.telefoneTxt.Name = "telefoneTxt";
             this.telefoneTxt.Size = new System.Drawing.Size(220, 27);
-            this.telefoneTxt.TabIndex = 44;
+            this.telefoneTxt.TabIndex = 2;
             // 
             // erroNomeLbl
             // 
             this.erroNomeLbl.AutoSize = true;
             this.erroNomeLbl.ForeColor = System.Drawing.Color.Red;
-            this.erroNomeLbl.Location = new System.Drawing.Point(170, 197);
+            this.erroNomeLbl.Location = new System.Drawing.Point(180, 197);
             this.erroNomeLbl.Name = "erroNomeLbl";
             this.erroNomeLbl.Size = new System.Drawing.Size(0, 16);
             this.erroNomeLbl.TabIndex = 43;
@@ -189,19 +191,19 @@
             // 
             this.usuarioNome.AutoSize = true;
             this.usuarioNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuarioNome.Location = new System.Drawing.Point(115, 172);
+            this.usuarioNome.Location = new System.Drawing.Point(107, 174);
             this.usuarioNome.Name = "usuarioNome";
             this.usuarioNome.Size = new System.Drawing.Size(53, 20);
-            this.usuarioNome.TabIndex = 42;
+            this.usuarioNome.TabIndex = 11;
             this.usuarioNome.Text = "Nome";
             // 
             // nomeTxt
             // 
             this.nomeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeTxt.Location = new System.Drawing.Point(171, 167);
+            this.nomeTxt.Location = new System.Drawing.Point(181, 167);
             this.nomeTxt.Name = "nomeTxt";
             this.nomeTxt.Size = new System.Drawing.Size(583, 27);
-            this.nomeTxt.TabIndex = 41;
+            this.nomeTxt.TabIndex = 1;
             // 
             // cancelarBtn
             // 
@@ -210,7 +212,7 @@
             this.cancelarBtn.Location = new System.Drawing.Point(458, 415);
             this.cancelarBtn.Name = "cancelarBtn";
             this.cancelarBtn.Size = new System.Drawing.Size(134, 38);
-            this.cancelarBtn.TabIndex = 56;
+            this.cancelarBtn.TabIndex = 6;
             this.cancelarBtn.Text = "Cancelar";
             this.cancelarBtn.UseVisualStyleBackColor = true;
             this.cancelarBtn.Click += new System.EventHandler(this.cancelarBtn_Click);
@@ -222,13 +224,14 @@
             this.salvarBtn.Location = new System.Drawing.Point(645, 415);
             this.salvarBtn.Name = "salvarBtn";
             this.salvarBtn.Size = new System.Drawing.Size(134, 38);
-            this.salvarBtn.TabIndex = 55;
+            this.salvarBtn.TabIndex = 7;
             this.salvarBtn.Text = "Salvar";
             this.salvarBtn.UseVisualStyleBackColor = true;
             this.salvarBtn.Click += new System.EventHandler(this.salvarBtn_Click);
             // 
             // CadastroUsuario
             // 
+            this.AcceptButton = this.salvarBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 497);

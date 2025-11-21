@@ -72,6 +72,7 @@
             this.senhaTxt.Location = new System.Drawing.Point(235, 267);
             this.senhaTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.senhaTxt.Name = "senhaTxt";
+            this.senhaTxt.PasswordChar = '*';
             this.senhaTxt.Size = new System.Drawing.Size(330, 30);
             this.senhaTxt.TabIndex = 3;
             // 
@@ -104,7 +105,7 @@
             this.titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titulo.Location = new System.Drawing.Point(285, 38);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(253, 39);
+            this.titulo.Size = new System.Drawing.Size(246, 38);
             this.titulo.TabIndex = 19;
             this.titulo.Text = "Acessar Conta";
             // 
@@ -118,6 +119,7 @@
             this.entrarBtn.TabIndex = 20;
             this.entrarBtn.Text = "Entrar";
             this.entrarBtn.UseVisualStyleBackColor = true;
+            this.entrarBtn.Click += new System.EventHandler(this.entrarBtn_Click);
             // 
             // erroLbl
             // 
@@ -139,6 +141,7 @@
             // 
             // Login
             // 
+            this.AcceptButton = this.entrarBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -154,7 +157,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Login";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

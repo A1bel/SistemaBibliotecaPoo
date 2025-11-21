@@ -73,7 +73,7 @@
             this.tituloLivro.Location = new System.Drawing.Point(77, 116);
             this.tituloLivro.Name = "tituloLivro";
             this.tituloLivro.Size = new System.Drawing.Size(50, 20);
-            this.tituloLivro.TabIndex = 2;
+            this.tituloLivro.TabIndex = 10;
             this.tituloLivro.Text = "Título";
             // 
             // cadastroBtn
@@ -83,7 +83,7 @@
             this.cadastroBtn.Location = new System.Drawing.Point(617, 353);
             this.cadastroBtn.Name = "cadastroBtn";
             this.cadastroBtn.Size = new System.Drawing.Size(134, 38);
-            this.cadastroBtn.TabIndex = 3;
+            this.cadastroBtn.TabIndex = 7;
             this.cadastroBtn.Text = "Salvar";
             this.cadastroBtn.UseVisualStyleBackColor = true;
             this.cadastroBtn.Click += new System.EventHandler(this.cadastroBtn_Click);
@@ -104,7 +104,7 @@
             this.cancelarBtn.Location = new System.Drawing.Point(430, 353);
             this.cancelarBtn.Name = "cancelarBtn";
             this.cancelarBtn.Size = new System.Drawing.Size(134, 38);
-            this.cancelarBtn.TabIndex = 5;
+            this.cancelarBtn.TabIndex = 6;
             this.cancelarBtn.Text = "Cancelar";
             this.cancelarBtn.UseVisualStyleBackColor = true;
             this.cancelarBtn.Click += new System.EventHandler(this.cancelarBtn_Click);
@@ -125,7 +125,7 @@
             this.autor.Location = new System.Drawing.Point(78, 172);
             this.autor.Name = "autor";
             this.autor.Size = new System.Drawing.Size(49, 20);
-            this.autor.TabIndex = 7;
+            this.autor.TabIndex = 11;
             this.autor.Text = "Autor";
             // 
             // autorTxt
@@ -134,7 +134,7 @@
             this.autorTxt.Location = new System.Drawing.Point(146, 172);
             this.autorTxt.Name = "autorTxt";
             this.autorTxt.Size = new System.Drawing.Size(497, 27);
-            this.autorTxt.TabIndex = 6;
+            this.autorTxt.TabIndex = 2;
             // 
             // erroCategoriaLbl
             // 
@@ -152,7 +152,7 @@
             this.categoria.Location = new System.Drawing.Point(46, 226);
             this.categoria.Name = "categoria";
             this.categoria.Size = new System.Drawing.Size(81, 20);
-            this.categoria.TabIndex = 10;
+            this.categoria.TabIndex = 12;
             this.categoria.Text = "Categoria";
             // 
             // categoriaTxt
@@ -161,7 +161,7 @@
             this.categoriaTxt.Location = new System.Drawing.Point(146, 226);
             this.categoriaTxt.Name = "categoriaTxt";
             this.categoriaTxt.Size = new System.Drawing.Size(203, 27);
-            this.categoriaTxt.TabIndex = 9;
+            this.categoriaTxt.TabIndex = 3;
             // 
             // erroPrecoLbl
             // 
@@ -188,7 +188,7 @@
             this.precoTxt.Location = new System.Drawing.Point(448, 226);
             this.precoTxt.Name = "precoTxt";
             this.precoTxt.Size = new System.Drawing.Size(195, 27);
-            this.precoTxt.TabIndex = 12;
+            this.precoTxt.TabIndex = 4;
             // 
             // erroQuantidadeLbl
             // 
@@ -206,7 +206,7 @@
             this.quantidade.Location = new System.Drawing.Point(33, 291);
             this.quantidade.Name = "quantidade";
             this.quantidade.Size = new System.Drawing.Size(94, 20);
-            this.quantidade.TabIndex = 16;
+            this.quantidade.TabIndex = 14;
             this.quantidade.Text = "Quantidade";
             // 
             // quantidadeTxt
@@ -215,10 +215,11 @@
             this.quantidadeTxt.Location = new System.Drawing.Point(146, 291);
             this.quantidadeTxt.Name = "quantidadeTxt";
             this.quantidadeTxt.Size = new System.Drawing.Size(318, 27);
-            this.quantidadeTxt.TabIndex = 15;
+            this.quantidadeTxt.TabIndex = 5;
             // 
             // CadastroLivros
             // 
+            this.AcceptButton = this.cadastroBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);

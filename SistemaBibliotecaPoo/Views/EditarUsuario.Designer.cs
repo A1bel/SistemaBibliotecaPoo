@@ -56,7 +56,7 @@
             this.titulo.Location = new System.Drawing.Point(85, 44);
             this.titulo.Name = "titulo";
             this.titulo.Size = new System.Drawing.Size(236, 36);
-            this.titulo.TabIndex = 24;
+            this.titulo.TabIndex = 10;
             this.titulo.Text = "Editar Cadastro";
             // 
             // erroQuantidadeLbl
@@ -75,7 +75,7 @@
             this.quantidade.Location = new System.Drawing.Point(31, 290);
             this.quantidade.Name = "quantidade";
             this.quantidade.Size = new System.Drawing.Size(141, 20);
-            this.quantidade.TabIndex = 40;
+            this.quantidade.TabIndex = 15;
             this.quantidade.Text = "Confirme a senha";
             // 
             // confimarSenhaTxt
@@ -84,7 +84,7 @@
             this.confimarSenhaTxt.Location = new System.Drawing.Point(183, 287);
             this.confimarSenhaTxt.Name = "confimarSenhaTxt";
             this.confimarSenhaTxt.Size = new System.Drawing.Size(285, 27);
-            this.confimarSenhaTxt.TabIndex = 39;
+            this.confimarSenhaTxt.TabIndex = 5;
             // 
             // erroEmailLbl
             // 
@@ -102,7 +102,7 @@
             this.preco.Location = new System.Drawing.Point(428, 181);
             this.preco.Name = "preco";
             this.preco.Size = new System.Drawing.Size(51, 20);
-            this.preco.TabIndex = 37;
+            this.preco.TabIndex = 13;
             this.preco.Text = "Email";
             // 
             // emailTxt
@@ -111,7 +111,7 @@
             this.emailTxt.Location = new System.Drawing.Point(485, 175);
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(281, 27);
-            this.emailTxt.TabIndex = 36;
+            this.emailTxt.TabIndex = 3;
             // 
             // erroSenhaLbl
             // 
@@ -129,7 +129,7 @@
             this.categoria.Location = new System.Drawing.Point(116, 235);
             this.categoria.Name = "categoria";
             this.categoria.Size = new System.Drawing.Size(56, 20);
-            this.categoria.TabIndex = 34;
+            this.categoria.TabIndex = 14;
             this.categoria.Text = "Senha";
             // 
             // senhaTxt
@@ -138,7 +138,7 @@
             this.senhaTxt.Location = new System.Drawing.Point(185, 232);
             this.senhaTxt.Name = "senhaTxt";
             this.senhaTxt.Size = new System.Drawing.Size(283, 27);
-            this.senhaTxt.TabIndex = 33;
+            this.senhaTxt.TabIndex = 4;
             // 
             // erroTelefoneLbl
             // 
@@ -156,7 +156,7 @@
             this.autor.Location = new System.Drawing.Point(99, 178);
             this.autor.Name = "autor";
             this.autor.Size = new System.Drawing.Size(73, 20);
-            this.autor.TabIndex = 31;
+            this.autor.TabIndex = 12;
             this.autor.Text = "Telefone";
             // 
             // telefoneTxt
@@ -165,7 +165,7 @@
             this.telefoneTxt.Location = new System.Drawing.Point(185, 178);
             this.telefoneTxt.Name = "telefoneTxt";
             this.telefoneTxt.Size = new System.Drawing.Size(220, 27);
-            this.telefoneTxt.TabIndex = 30;
+            this.telefoneTxt.TabIndex = 2;
             // 
             // cancelarBtn
             // 
@@ -174,7 +174,7 @@
             this.cancelarBtn.Location = new System.Drawing.Point(445, 340);
             this.cancelarBtn.Name = "cancelarBtn";
             this.cancelarBtn.Size = new System.Drawing.Size(134, 38);
-            this.cancelarBtn.TabIndex = 29;
+            this.cancelarBtn.TabIndex = 6;
             this.cancelarBtn.Text = "Cancelar";
             this.cancelarBtn.UseVisualStyleBackColor = true;
             // 
@@ -194,7 +194,7 @@
             this.cadastroBtn.Location = new System.Drawing.Point(632, 340);
             this.cadastroBtn.Name = "cadastroBtn";
             this.cadastroBtn.Size = new System.Drawing.Size(134, 38);
-            this.cadastroBtn.TabIndex = 27;
+            this.cadastroBtn.TabIndex = 7;
             this.cadastroBtn.Text = "Salvar";
             this.cadastroBtn.UseVisualStyleBackColor = true;
             // 
@@ -205,7 +205,7 @@
             this.usuarioNome.Location = new System.Drawing.Point(127, 124);
             this.usuarioNome.Name = "usuarioNome";
             this.usuarioNome.Size = new System.Drawing.Size(53, 20);
-            this.usuarioNome.TabIndex = 26;
+            this.usuarioNome.TabIndex = 11;
             this.usuarioNome.Text = "Nome";
             // 
             // nomeTxt
@@ -214,7 +214,7 @@
             this.nomeTxt.Location = new System.Drawing.Point(183, 119);
             this.nomeTxt.Name = "nomeTxt";
             this.nomeTxt.Size = new System.Drawing.Size(583, 27);
-            this.nomeTxt.TabIndex = 25;
+            this.nomeTxt.TabIndex = 1;
             // 
             // erroConfirmarSenhaLbl
             // 
@@ -227,6 +227,7 @@
             // 
             // EditarUsuario
             // 
+            this.AcceptButton = this.cadastroBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
