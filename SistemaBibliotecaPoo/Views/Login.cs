@@ -47,5 +47,10 @@ namespace SistemaBibliotecaPoo
             frmCadastro.Show();
             this.Hide();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
