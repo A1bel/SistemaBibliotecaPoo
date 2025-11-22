@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaBibliotecaPoo.Models.Usuario
+namespace SistemaBibliotecaPoo.Models.Usuarios
 {
     public class Admin : Usuario
     {

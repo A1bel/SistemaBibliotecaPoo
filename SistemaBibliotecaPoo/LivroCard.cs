@@ -1,4 +1,5 @@
-﻿using SistemaBibliotecaPoo.Models.Usuario;
+﻿using SistemaBibliotecaPoo.Models;
+using SistemaBibliotecaPoo.Models.Usuarios;
 using SistemaBibliotecaPoo.Views;
 using System;
 using System.Collections.Generic;
@@ -20,19 +21,25 @@ namespace SistemaBibliotecaPoo
             InitializeComponent();
         }
 
-        public void SetData(Livro livro)
+        public void SetData(Livro livro, Usuario usuario)
         {
-            tituloLbl.Text = livro.Titulo;
+            if (usuario is Admin)
+            {
+                editarLivroBtn.Visible = true;
+                alugarBtn.Visible = false;
+            }
+            else if(usuario is Leitor)
+            {
+                editarLivroBtn.Visible = false;
+                alugarBtn.Visible = true;
+            }
+
+                tituloLbl.Text = livro.Titulo;
             precoLbl.Text = livro.Preco.ToString();
             autorLbl.Text = livro.Autor;
             categoriaLbl.Text = livro.Categoria;
 
             this.Tag = livro.Id;
-        }
-
-        private void detalhesBtn_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void editarLivroBtn_Click(object sender, EventArgs e)
@@ -44,6 +51,11 @@ namespace SistemaBibliotecaPoo
                 if (result == DialogResult.OK)
                     LivroAtualizado?.Invoke();
             }
+        }
+
+        private void alugarBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

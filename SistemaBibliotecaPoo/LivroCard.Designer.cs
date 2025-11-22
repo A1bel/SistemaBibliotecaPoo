@@ -30,7 +30,7 @@
         {
             this.tituloLbl = new System.Windows.Forms.Label();
             this.autorLbl = new System.Windows.Forms.Label();
-            this.detalhesBtn = new System.Windows.Forms.Button();
+            this.alugarBtn = new System.Windows.Forms.Button();
             this.categoriaLbl = new System.Windows.Forms.Label();
             this.precoLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,16 +61,16 @@
             this.autorLbl.TabIndex = 1;
             this.autorLbl.Text = "autorLbl";
             // 
-            // detalhesBtn
+            // alugarBtn
             // 
-            this.detalhesBtn.Location = new System.Drawing.Point(44, 149);
-            this.detalhesBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.detalhesBtn.Name = "detalhesBtn";
-            this.detalhesBtn.Size = new System.Drawing.Size(100, 28);
-            this.detalhesBtn.TabIndex = 2;
-            this.detalhesBtn.Text = "Detalhes";
-            this.detalhesBtn.UseVisualStyleBackColor = true;
-            this.detalhesBtn.Click += new System.EventHandler(this.detalhesBtn_Click);
+            this.alugarBtn.Location = new System.Drawing.Point(44, 149);
+            this.alugarBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.alugarBtn.Name = "alugarBtn";
+            this.alugarBtn.Size = new System.Drawing.Size(100, 28);
+            this.alugarBtn.TabIndex = 2;
+            this.alugarBtn.Text = "Alugar";
+            this.alugarBtn.UseVisualStyleBackColor = true;
+            this.alugarBtn.Click += new System.EventHandler(this.alugarBtn_Click);
             // 
             // categoriaLbl
             // 
@@ -129,7 +129,7 @@
             // 
             // editarLivroBtn
             // 
-            this.editarLivroBtn.Location = new System.Drawing.Point(44, 185);
+            this.editarLivroBtn.Location = new System.Drawing.Point(44, 149);
             this.editarLivroBtn.Margin = new System.Windows.Forms.Padding(4);
             this.editarLivroBtn.Name = "editarLivroBtn";
             this.editarLivroBtn.Size = new System.Drawing.Size(100, 28);
@@ -150,12 +150,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.precoLbl);
             this.Controls.Add(this.categoriaLbl);
-            this.Controls.Add(this.detalhesBtn);
+            this.Controls.Add(this.alugarBtn);
             this.Controls.Add(this.autorLbl);
             this.Controls.Add(this.tituloLbl);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LivroCard";
-            this.Size = new System.Drawing.Size(202, 216);
+            this.Size = new System.Drawing.Size(202, 197);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,7 +165,7 @@
 
         private System.Windows.Forms.Label tituloLbl;
         private System.Windows.Forms.Label autorLbl;
-        private System.Windows.Forms.Button detalhesBtn;
+        private System.Windows.Forms.Button alugarBtn;
         private System.Windows.Forms.Label categoriaLbl;
         private System.Windows.Forms.Label precoLbl;
         private System.Windows.Forms.Label label1;

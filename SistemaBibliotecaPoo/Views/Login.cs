@@ -33,7 +33,7 @@ namespace SistemaBibliotecaPoo
                 return;
             }
 
-            HomeForm home = new HomeForm();
+            HomeForm home = new HomeForm(result.UsuarioLogado);
             home.FormClosed += (s, args) => this.Close();
             home.Show();
             this.Hide();

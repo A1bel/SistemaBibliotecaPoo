@@ -1,10 +1,11 @@
 ﻿using System;
+using SistemaBibliotecaPoo.Models.Usuarios;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaBibliotecaPoo.Models.Usuario
+namespace SistemaBibliotecaPoo.Models
 {
     public class Emprestimo
     {

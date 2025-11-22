@@ -1,6 +1,6 @@
 ﻿using SistemaBibliotecaPoo.Controllers;
 using SistemaBibliotecaPoo.Models;
-using SistemaBibliotecaPoo.Models.Usuario;
+using SistemaBibliotecaPoo.Models.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

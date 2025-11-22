@@ -1,5 +1,5 @@
 ﻿using SistemaBibliotecaPoo.Models;
-using SistemaBibliotecaPoo.Models.Usuario;
+using SistemaBibliotecaPoo.Models.Usuarios;
 using SistemaBibliotecaPoo.Repositories;
 using System;
 using System.Collections.Generic;
@@ -52,6 +52,8 @@ namespace SistemaBibliotecaPoo.Controllers
                     result.Success = false;
                     return result;
                 }
+
+                result.UsuarioLogado = usuario;
             }
             catch (Exception ex)
             {

@@ -1,5 +1,6 @@
 ﻿using SistemaBibliotecaPoo.Controllers;
-using SistemaBibliotecaPoo.Models.Usuario;
+using SistemaBibliotecaPoo.Models;
+using SistemaBibliotecaPoo.Models.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,17 +16,29 @@ namespace SistemaBibliotecaPoo.Views
     public partial class HomeForm : Form
     {
         private readonly LivroController _livroController;
-        private bool _primeiraVez = true;
-        public HomeForm()
+        private Usuario _usuario;
+        public HomeForm(Usuario usuario)
         {
             InitializeComponent();
             _livroController = new LivroController();
+            _usuario = usuario;
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
             CarregarLivros();
-
+            if(_usuario is Admin)
+            {
+                meusLivrosBtn.Visible = false;
+                CadastrarLivroBtn.Visible = true;
+                //reservarBtn.Visible = false;
+            }
+            else if (_usuario is Leitor)
+            {
+                meusLivrosBtn.Visible = true;
+                CadastrarLivroBtn.Visible = false;
+                //reservarBtn.Visible = true;
+            }
         }
 
         private void CarregarLivros()
@@ -36,7 +49,7 @@ namespace SistemaBibliotecaPoo.Views
             foreach (Livro livro in livros)
             {
                 LivroCard card = new LivroCard();
-                card.SetData(livro);
+                card.SetData(livro, _usuario);
 
                 card.LivroAtualizado += CarregarLivros;
 

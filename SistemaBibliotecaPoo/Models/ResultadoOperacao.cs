@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaBibliotecaPoo.Models.Usuarios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace SistemaBibliotecaPoo.Models
     {
         public bool Success { get; set; }
         public Dictionary<string, string> Erros { get; set; } = new Dictionary<string, string>();
+        public Usuario UsuarioLogado { get; set; }
 
     }
 }

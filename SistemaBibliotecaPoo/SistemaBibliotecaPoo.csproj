@@ -88,11 +88,11 @@
     <Compile Include="Models\Livro.cs" />
     <Compile Include="Models\LivroDto.cs" />
     <Compile Include="Models\ResultadoOperacao.cs" />
-    <Compile Include="Models\Usuario\Admin.cs" />
-    <Compile Include="Models\Usuario\Leitor.cs" />
-    <Compile Include="Models\Usuario\PerfilFactory.cs" />
-    <Compile Include="Models\Usuario\Usuario.cs" />
-    <Compile Include="Models\Usuario\UsuarioDto.cs" />
+    <Compile Include="Models\Usuarios\Admin.cs" />
+    <Compile Include="Models\Usuarios\Leitor.cs" />
+    <Compile Include="Models\Usuarios\PerfilFactory.cs" />
+    <Compile Include="Models\Usuarios\Usuario.cs" />
+    <Compile Include="Models\Usuarios\UsuarioDto.cs" />
     <Compile Include="Repositories\EmprestimoRepositorio.cs" />
     <Compile Include="Repositories\LivroRepositorio.cs" />
     <Compile Include="Repositories\UsuarioRepositorio.cs" />

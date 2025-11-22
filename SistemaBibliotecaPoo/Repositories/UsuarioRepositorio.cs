@@ -1,4 +1,4 @@
-﻿using SistemaBibliotecaPoo.Models.Usuario;
+﻿using SistemaBibliotecaPoo.Models.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,6 +31,11 @@ namespace SistemaBibliotecaPoo.Repositories
 
                 return _instancia;
             }
+        }
+
+        public bool ExisteAdmin()
+        {
+            return _usuarios.Any(u => u is Admin);
         }
 
         public void Adicionar( Usuario usuario)
@@ -88,5 +93,6 @@ namespace SistemaBibliotecaPoo.Repositories
             var json = JsonConvert.SerializeObject(_usuarios, Formatting.Indented, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All });
             File.WriteAllText(_caminhoArquivo, json);
         }
+
     }
 }
