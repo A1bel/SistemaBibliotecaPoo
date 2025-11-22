@@ -45,6 +45,21 @@ namespace SistemaBibliotecaPoo.Repositories
             return _emprestimos.Find(u => u.Id == id);
         }
 
+        public Emprestimo BuscarPorLivro(int livroId)
+        {
+            return _emprestimos.Find(u => u.LivroId == livroId);
+        }
+
+        public Emprestimo BuscarEmprestimoAtivo(int usuarioId, int livroId)
+        {
+            return _emprestimos
+                .FirstOrDefault(e =>
+                    e.UsuarioId == usuarioId &&
+                    e.LivroId == livroId &&
+                    e.DataDevolucao == null
+                );
+        }
+
         public List<Emprestimo> BuscarTodos()
         {
             return new List<Emprestimo>(_emprestimos);
