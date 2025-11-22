@@ -30,11 +30,18 @@ namespace SistemaBibliotecaPoo
             {
                 editarLivroBtn.Visible = true;
                 alugarBtn.Visible = false;
+
+                adminPanel.Visible = true;
+
+                qtdLbl.Text = livro.Quantidade.ToString();
+                statusLbl.Text = livro.Disponivel ? "Disponível" : "Indisponível";
             }
             else if (usuario is Leitor)
             {
                 editarLivroBtn.Visible = false;
                 alugarBtn.Visible = true;
+
+                adminPanel.Visible = false;
             }
 
             tituloLbl.Text = livro.Titulo;
@@ -81,6 +88,11 @@ namespace SistemaBibliotecaPoo
 
                 LivroAtualizado?.Invoke();
             }
+        }
+
+        private void deletarBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
