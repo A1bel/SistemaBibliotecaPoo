@@ -1,4 +1,5 @@
-﻿using SistemaBibliotecaPoo.Models.Usuarios;
+﻿using SistemaBibliotecaPoo.Common;
+using SistemaBibliotecaPoo.Models.Usuarios;
 using SistemaBibliotecaPoo.Repositories;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace SistemaBibliotecaPoo
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new AppContexto());
         }
     }
 }

@@ -17,6 +17,7 @@ namespace SistemaBibliotecaPoo.Views
     {
         private readonly LivroController _livroController;
         private Usuario _usuario;
+        public event Action OnLogout;
         public HomeForm(Usuario usuario)
         {
             InitializeComponent();
@@ -78,6 +79,12 @@ namespace SistemaBibliotecaPoo.Views
             CarregarLivros();
             this.Show();
 
+        }
+
+        private void sairBtn_Click(object sender, EventArgs e)
+        {
+            OnLogout?.Invoke();
+            this.Close();
         }
     }
 }

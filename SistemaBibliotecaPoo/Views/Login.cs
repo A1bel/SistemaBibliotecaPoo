@@ -1,5 +1,6 @@
 ﻿using SistemaBibliotecaPoo.Controllers;
 using SistemaBibliotecaPoo.Models;
+using SistemaBibliotecaPoo.Models.Usuarios;
 using SistemaBibliotecaPoo.Views;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace SistemaBibliotecaPoo
     public partial class Login : Form
     {
         private readonly UsuarioController _usuarioController;
+        public event Action<Usuario> OnLoginSucesso;
         public Login()
         {
             InitializeComponent();
@@ -33,10 +35,12 @@ namespace SistemaBibliotecaPoo
                 return;
             }
 
-            HomeForm home = new HomeForm(result.UsuarioLogado);
-            home.FormClosed += (s, args) => this.Close();
-            home.Show();
-            this.Hide();
+            OnLoginSucesso?.Invoke(result.UsuarioLogado);
+            this.Close();
+            //HomeForm home = new HomeForm(result.UsuarioLogado);
+            //home.FormClosed += (s, args) => this.Close();
+            //home.Show();
+            //this.Hide();
 
         }
 

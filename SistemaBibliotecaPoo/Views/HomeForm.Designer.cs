@@ -31,6 +31,7 @@
             this.flowLivrosPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.CadastrarLivroBtn = new System.Windows.Forms.Button();
             this.meusLivrosBtn = new System.Windows.Forms.Button();
+            this.sairBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLivrosPanel
@@ -43,7 +44,7 @@
             // 
             // CadastrarLivroBtn
             // 
-            this.CadastrarLivroBtn.Location = new System.Drawing.Point(911, 22);
+            this.CadastrarLivroBtn.Location = new System.Drawing.Point(28, 12);
             this.CadastrarLivroBtn.Name = "CadastrarLivroBtn";
             this.CadastrarLivroBtn.Size = new System.Drawing.Size(129, 39);
             this.CadastrarLivroBtn.TabIndex = 1;
@@ -53,19 +54,30 @@
             // 
             // meusLivrosBtn
             // 
-            this.meusLivrosBtn.Location = new System.Drawing.Point(919, 22);
+            this.meusLivrosBtn.Location = new System.Drawing.Point(28, 12);
             this.meusLivrosBtn.Name = "meusLivrosBtn";
-            this.meusLivrosBtn.Size = new System.Drawing.Size(121, 39);
+            this.meusLivrosBtn.Size = new System.Drawing.Size(129, 39);
             this.meusLivrosBtn.TabIndex = 2;
             this.meusLivrosBtn.Text = "Meus Livros";
             this.meusLivrosBtn.UseVisualStyleBackColor = true;
             this.meusLivrosBtn.Click += new System.EventHandler(this.meusLivrosBtn_Click);
+            // 
+            // sairBtn
+            // 
+            this.sairBtn.Location = new System.Drawing.Point(914, 12);
+            this.sairBtn.Name = "sairBtn";
+            this.sairBtn.Size = new System.Drawing.Size(126, 39);
+            this.sairBtn.TabIndex = 3;
+            this.sairBtn.Text = "Sair";
+            this.sairBtn.UseVisualStyleBackColor = true;
+            this.sairBtn.Click += new System.EventHandler(this.sairBtn_Click);
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.sairBtn);
             this.Controls.Add(this.meusLivrosBtn);
             this.Controls.Add(this.CadastrarLivroBtn);
             this.Controls.Add(this.flowLivrosPanel);
@@ -82,5 +94,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLivrosPanel;
         private System.Windows.Forms.Button CadastrarLivroBtn;
         private System.Windows.Forms.Button meusLivrosBtn;
+        private System.Windows.Forms.Button sairBtn;
     }
 }

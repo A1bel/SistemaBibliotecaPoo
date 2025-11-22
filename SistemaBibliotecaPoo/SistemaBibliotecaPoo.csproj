@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\AppContexto.cs" />
     <Compile Include="Controllers\EmprestimoController.cs" />
     <Compile Include="Controllers\LivroController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
