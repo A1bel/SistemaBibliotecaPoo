@@ -44,17 +44,22 @@ namespace SistemaBibliotecaPoo.Views
         private void CarregarLivros()
         {
             flowLivrosPanel.Controls.Clear();
-            List<Livro> livros = _livroController.BuscarTodosLivros();
+
+            List<Livro> livros;
+            if( _usuario is Admin) 
+                livros = _livroController.BuscarTodosLivros();
+            else
+                livros = _livroController.BuscarDisponiveis();
 
             foreach (Livro livro in livros)
-            {
-                LivroCard card = new LivroCard();
-                card.SetData(livro, _usuario);
+                {
+                    LivroCard card = new LivroCard(_usuario);
+                    card.SetData(livro, _usuario);
 
-                card.LivroAtualizado += CarregarLivros;
+                    card.LivroAtualizado += CarregarLivros;
 
-                flowLivrosPanel.Controls.Add(card);
-            }
+                    flowLivrosPanel.Controls.Add(card);
+                }
         }
         private void CadastrarLivroBtn_Click(object sender, EventArgs e)
         {
@@ -63,6 +68,16 @@ namespace SistemaBibliotecaPoo.Views
                 frmCadastro.ShowDialog();
                 CarregarLivros();
             }
+        }
+
+        private void meusLivrosBtn_Click(object sender, EventArgs e)
+        {
+            MeusLivros meusLivros = new MeusLivros(_usuario);
+            this.Hide();
+            meusLivros.ShowDialog();
+            CarregarLivros();
+            this.Show();
+
         }
     }
 }

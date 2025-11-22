@@ -59,6 +59,7 @@
             this.meusLivrosBtn.TabIndex = 2;
             this.meusLivrosBtn.Text = "Meus Livros";
             this.meusLivrosBtn.UseVisualStyleBackColor = true;
+            this.meusLivrosBtn.Click += new System.EventHandler(this.meusLivrosBtn_Click);
             // 
             // HomeForm
             // 

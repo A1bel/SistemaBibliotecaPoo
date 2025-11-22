@@ -50,6 +50,12 @@ namespace SistemaBibliotecaPoo.Repositories
             return new List<Livro>(_livros);
         }
 
+        public List<Livro> BuscarDisponiveis()
+        {
+            return new List<Livro>(_livros)
+                .Where(l => l.Disponivel && l.Quantidade > 0)
+                .ToList();
+        }
         public void Atualizar(Livro livroAtualizado)
         {
             var existente = Buscar(livroAtualizado.Id);

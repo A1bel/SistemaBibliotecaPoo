@@ -50,6 +50,11 @@ namespace SistemaBibliotecaPoo.Controllers
             return _livroRepositorio.BuscarTodos();
         }
 
+        public List<Livro> BuscarDisponiveis()
+        {
+            return _livroRepositorio.BuscarDisponiveis();
+        }
+
         public ResultadoOperacao AtualizarLivro(LivroDto livroDto)
         {
             ResultadoOperacao result = new ResultadoOperacao();

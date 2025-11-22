@@ -97,6 +97,12 @@
     <Compile Include="Repositories\EmprestimoRepositorio.cs" />
     <Compile Include="Repositories\LivroRepositorio.cs" />
     <Compile Include="Repositories\UsuarioRepositorio.cs" />
+    <Compile Include="Views\MeusLivros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MeusLivros.Designer.cs">
+      <DependentUpon>MeusLivros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CadastroLivros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\MeusLivros.resx">
+      <DependentUpon>MeusLivros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CadastroLivros.resx">
       <DependentUpon>CadastroLivros.cs</DependentUpon>
     </EmbeddedResource>

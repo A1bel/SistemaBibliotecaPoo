@@ -111,5 +111,28 @@ namespace SistemaBibliotecaPoo.Controllers
 
             return result;
         }
+
+        public List<object> ObterEmprestimosDoUsuario()
+        {
+            List<Emprestimo> emprestimos = _emprestimoRepositorio
+                .ObterEmprestimosAbertosPorUsuario(_usuarioLogado.Id);
+
+            var lista = new List<object>();
+
+            foreach (var e in emprestimos)
+            {
+                var livro = _livroRepositorio.Buscar(e.LivroId);
+
+                lista.Add(new
+                {
+                    e.Id,
+                    Titulo = livro.Titulo,
+                    Autor = livro.Autor,
+                    DataEmprestimo = e.DataEmprestimo.ToString("dd/MM/yyyy")
+                });
+            }
+
+            return lista;
+        }
     }
 }

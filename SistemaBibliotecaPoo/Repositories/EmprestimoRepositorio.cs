@@ -65,6 +65,13 @@ namespace SistemaBibliotecaPoo.Repositories
             return new List<Emprestimo>(_emprestimos);
         }
 
+        public List<Emprestimo> ObterEmprestimosAbertosPorUsuario(int usuarioId)
+        {
+            return BuscarTodos()
+                .Where(e => e.UsuarioId == usuarioId && e.DataDevolucao == null)
+                .ToList();
+        }
+
         public void Atualizar(Emprestimo emprestimoAtualizado)
         {
             var existente = Buscar(emprestimoAtualizado.Id);
