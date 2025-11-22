@@ -12,6 +12,7 @@ namespace SistemaBibliotecaPoo.Controllers
     public class LivroController
     {
         private readonly LivroRepositorio _livroRepositorio = LivroRepositorio.Instancia;
+        private readonly EmprestimoRepositorio _emprestimoRepositorio = EmprestimoRepositorio.Instancia;
 
         public ResultadoOperacao CadastrarLivro(LivroDto livroDto)
         {
@@ -97,6 +98,14 @@ namespace SistemaBibliotecaPoo.Controllers
             ResultadoOperacao result = new ResultadoOperacao { Success = true };
             try
             {
+                List<Emprestimo> emprestimosAbertos = _emprestimoRepositorio.ObterEmprestimosAbertosPorLivro(id);
+                if(emprestimosAbertos.Any())
+                {
+                    result.Erros.Add("geral", "Não é possível deletar este livro, pois ele está emprestado.");
+                    result.Success = false;
+                    return result;
+                }
+
                 _livroRepositorio.Remover(id);
             }
             catch(ArgumentException ex)

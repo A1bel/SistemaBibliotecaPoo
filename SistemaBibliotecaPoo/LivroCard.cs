@@ -18,10 +18,12 @@ namespace SistemaBibliotecaPoo
     {
         public event Action LivroAtualizado;
         private readonly EmprestimoController _emprestimoController;
+        private readonly LivroController _livroController;
         public LivroCard(Usuario usuario)
         {
             InitializeComponent();
             _emprestimoController = new EmprestimoController(usuario);
+            _livroController = new LivroController();
         }
 
         public void SetData(Livro livro, Usuario usuario)
@@ -93,6 +95,29 @@ namespace SistemaBibliotecaPoo
         private void deletarBtn_Click(object sender, EventArgs e)
         {
 
+            var confirmar = MessageBox.Show(
+            "Deseja realmente deletar este livro?",
+            "Confirmação",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+            
+            if(confirmar == DialogResult.Yes)
+            {
+                ResultadoOperacao result = _livroController.RemoverLivro((int)this.Tag);
+
+                if (!result.Success)
+                {
+                    MessageBox.Show(
+                        result.Erros["geral"],
+                        "Erro",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                    return;
+                }
+
+                LivroAtualizado?.Invoke();
+            }
         }
     }
 }
