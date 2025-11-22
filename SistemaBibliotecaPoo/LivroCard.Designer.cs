@@ -36,13 +36,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.editarLivroBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tituloLbl
             // 
             this.tituloLbl.AutoSize = true;
             this.tituloLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tituloLbl.Location = new System.Drawing.Point(64, 20);
+            this.tituloLbl.Location = new System.Drawing.Point(63, 21);
             this.tituloLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tituloLbl.Name = "tituloLbl";
             this.tituloLbl.Size = new System.Drawing.Size(72, 22);
@@ -53,7 +54,7 @@
             // 
             this.autorLbl.AutoSize = true;
             this.autorLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autorLbl.Location = new System.Drawing.Point(91, 86);
+            this.autorLbl.Location = new System.Drawing.Point(90, 87);
             this.autorLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.autorLbl.Name = "autorLbl";
             this.autorLbl.Size = new System.Drawing.Size(61, 18);
@@ -62,8 +63,8 @@
             // 
             // detalhesBtn
             // 
-            this.detalhesBtn.Location = new System.Drawing.Point(40, 151);
-            this.detalhesBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.detalhesBtn.Location = new System.Drawing.Point(44, 149);
+            this.detalhesBtn.Margin = new System.Windows.Forms.Padding(4);
             this.detalhesBtn.Name = "detalhesBtn";
             this.detalhesBtn.Size = new System.Drawing.Size(100, 28);
             this.detalhesBtn.TabIndex = 2;
@@ -75,7 +76,7 @@
             // 
             this.categoriaLbl.AutoSize = true;
             this.categoriaLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoriaLbl.Location = new System.Drawing.Point(114, 113);
+            this.categoriaLbl.Location = new System.Drawing.Point(113, 114);
             this.categoriaLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.categoriaLbl.Name = "categoriaLbl";
             this.categoriaLbl.Size = new System.Drawing.Size(63, 18);
@@ -86,7 +87,7 @@
             // 
             this.precoLbl.AutoSize = true;
             this.precoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precoLbl.Location = new System.Drawing.Point(91, 57);
+            this.precoLbl.Location = new System.Drawing.Point(90, 58);
             this.precoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.precoLbl.Name = "precoLbl";
             this.precoLbl.Size = new System.Drawing.Size(65, 18);
@@ -97,7 +98,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 57);
+            this.label1.Location = new System.Drawing.Point(30, 58);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 18);
@@ -108,7 +109,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 113);
+            this.label2.Location = new System.Drawing.Point(30, 114);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 18);
@@ -119,12 +120,23 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 86);
+            this.label3.Location = new System.Drawing.Point(30, 87);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 18);
             this.label3.TabIndex = 6;
             this.label3.Text = "Autor:";
+            // 
+            // editarLivroBtn
+            // 
+            this.editarLivroBtn.Location = new System.Drawing.Point(44, 185);
+            this.editarLivroBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.editarLivroBtn.Name = "editarLivroBtn";
+            this.editarLivroBtn.Size = new System.Drawing.Size(100, 28);
+            this.editarLivroBtn.TabIndex = 9;
+            this.editarLivroBtn.Text = "Editar";
+            this.editarLivroBtn.UseVisualStyleBackColor = true;
+            this.editarLivroBtn.Click += new System.EventHandler(this.editarLivroBtn_Click);
             // 
             // LivroCard
             // 
@@ -132,6 +144,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.editarLivroBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
@@ -140,7 +153,7 @@
             this.Controls.Add(this.detalhesBtn);
             this.Controls.Add(this.autorLbl);
             this.Controls.Add(this.tituloLbl);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LivroCard";
             this.Size = new System.Drawing.Size(202, 216);
             this.ResumeLayout(false);
@@ -158,5 +171,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button editarLivroBtn;
     }
 }

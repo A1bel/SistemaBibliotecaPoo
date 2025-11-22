@@ -38,6 +38,8 @@ namespace SistemaBibliotecaPoo.Views
                 LivroCard card = new LivroCard();
                 card.SetData(livro);
 
+                card.LivroAtualizado += CarregarLivros;
+
                 flowLivrosPanel.Controls.Add(card);
             }
         }

@@ -50,34 +50,42 @@ namespace SistemaBibliotecaPoo.Controllers
             return _livroRepositorio.BuscarTodos();
         }
 
-        //public ResultadoOperacao AtualizarLivro(Livro livro)
-        //{
-        //    ResultadoOperacao result = new ResultadoOperacao();
+        public ResultadoOperacao AtualizarLivro(LivroDto livroDto)
+        {
+            ResultadoOperacao result = new ResultadoOperacao();
 
-        //    Livro existente = _livroRepositorio.Buscar(livro.Id);
-        //    if(existente == null)
-        //    {
-        //        result.Erros.Add("geral", "Livro não encontrado");
-        //        result.Success = false;
-        //        return result;
-        //    }
+            Livro existente = _livroRepositorio.Buscar(livroDto.Id);
+            if (existente == null)
+            {
+                result.Erros.Add("geral", "Livro não encontrado");
+                result.Success = false;
+                return result;
+            }
 
-        //    result = ValidarLivro(livro);
-        //    if (!result.Success)
-        //        return result;
+            result = ValidarLivro(livroDto);
+            if (!result.Success)
+                return result;
 
-        //    try
-        //    {
-        //        _livroRepositorio.Atualizar(livro);
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        result.Erros.Add("geral", "Ocorreu um erro ao atualizar o livro");
-        //        result.Success = false;
-        //    }
-        //    return result;
-        //}
+            try
+            {
+                existente.Titulo = livroDto.Titulo;
+                existente.Autor = livroDto.Autor;
+                existente.Categoria = livroDto.Categoria;
+                existente.Preco = Convert.ToDouble(livroDto.Preco);
+                existente.Quantidade = Convert.ToInt32(livroDto.Quantidade);
+                existente.Disponivel = livroDto.Disponivel;
+
+                _livroRepositorio.Atualizar(existente);
+
+            }
+            catch (Exception ex)
+            {
+                result.Erros.Add("geral", "Ocorreu um erro ao atualizar o livro");
+                result.Success = false;
+            }
+            return result;
+        }
 
         public ResultadoOperacao RemoverLivro(int id)
         {
