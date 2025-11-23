@@ -94,8 +94,18 @@ namespace SistemaBibliotecaPoo.Controllers
             existente.Telefone = usuarioDto.Telefone;
 
             if (!string.IsNullOrWhiteSpace(usuarioDto.Senha))
-            {
                 existente.Senha = usuarioDto.Senha;
+
+            if(usuarioDto.Tipo != existente.GetType().Name) // se o tipo mudou
+    {
+                Usuario novoUsuario;
+                if (usuarioDto.Tipo == "Admin")
+                    novoUsuario = new Admin(existente.Nome, existente.Telefone, existente.Email, existente.Senha);
+                else // Leitor
+                    novoUsuario = new Leitor(existente.Nome, existente.Telefone, existente.Email, existente.Senha);
+
+                novoUsuario.Id = existente.Id; // mantém o mesmo Id
+                existente = novoUsuario; // substitui a referência
             }
 
             try

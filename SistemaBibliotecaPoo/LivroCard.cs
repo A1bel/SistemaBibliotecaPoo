@@ -47,6 +47,7 @@ namespace SistemaBibliotecaPoo
             }
 
             tituloLbl.Text = livro.Titulo;
+            tituloLbl.Left = (this.Width - tituloLbl.Width) / 2;
             precoLbl.Text = livro.Preco.ToString();
             autorLbl.Text = livro.Autor;
             categoriaLbl.Text = livro.Categoria;

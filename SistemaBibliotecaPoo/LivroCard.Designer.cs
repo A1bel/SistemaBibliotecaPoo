@@ -38,11 +38,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.editarLivroBtn = new System.Windows.Forms.Button();
             this.adminPanel = new System.Windows.Forms.Panel();
-            this.deletarBtn = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.qtdLbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.statusLbl = new System.Windows.Forms.Label();
-            this.qtdLbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.deletarBtn = new System.Windows.Forms.Button();
             this.adminPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             // 
             this.tituloLbl.AutoSize = true;
             this.tituloLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tituloLbl.Location = new System.Drawing.Point(63, 21);
+            this.tituloLbl.Location = new System.Drawing.Point(31, 22);
             this.tituloLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tituloLbl.Name = "tituloLbl";
             this.tituloLbl.Size = new System.Drawing.Size(72, 22);
@@ -155,30 +155,19 @@
             this.adminPanel.Controls.Add(this.editarLivroBtn);
             this.adminPanel.Location = new System.Drawing.Point(-1, 135);
             this.adminPanel.Name = "adminPanel";
-            this.adminPanel.Size = new System.Drawing.Size(209, 99);
+            this.adminPanel.Size = new System.Drawing.Size(201, 99);
             this.adminPanel.TabIndex = 10;
             // 
-            // deletarBtn
+            // qtdLbl
             // 
-            this.deletarBtn.Location = new System.Drawing.Point(103, 67);
-            this.deletarBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.deletarBtn.Name = "deletarBtn";
-            this.deletarBtn.Size = new System.Drawing.Size(87, 28);
-            this.deletarBtn.TabIndex = 10;
-            this.deletarBtn.Text = "Deletar";
-            this.deletarBtn.UseVisualStyleBackColor = true;
-            this.deletarBtn.Click += new System.EventHandler(this.deletarBtn_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 10);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 18);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Quantidade:";
+            this.qtdLbl.AutoSize = true;
+            this.qtdLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qtdLbl.Location = new System.Drawing.Point(127, 10);
+            this.qtdLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.qtdLbl.Name = "qtdLbl";
+            this.qtdLbl.Size = new System.Drawing.Size(47, 18);
+            this.qtdLbl.TabIndex = 15;
+            this.qtdLbl.Text = "qtdLbl";
             // 
             // label5
             // 
@@ -202,16 +191,27 @@
             this.statusLbl.TabIndex = 13;
             this.statusLbl.Text = "statusLbl";
             // 
-            // qtdLbl
+            // label4
             // 
-            this.qtdLbl.AutoSize = true;
-            this.qtdLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qtdLbl.Location = new System.Drawing.Point(127, 10);
-            this.qtdLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.qtdLbl.Name = "qtdLbl";
-            this.qtdLbl.Size = new System.Drawing.Size(47, 18);
-            this.qtdLbl.TabIndex = 15;
-            this.qtdLbl.Text = "qtdLbl";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(27, 10);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 18);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Quantidade:";
+            // 
+            // deletarBtn
+            // 
+            this.deletarBtn.Location = new System.Drawing.Point(103, 67);
+            this.deletarBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.deletarBtn.Name = "deletarBtn";
+            this.deletarBtn.Size = new System.Drawing.Size(87, 28);
+            this.deletarBtn.TabIndex = 10;
+            this.deletarBtn.Text = "Deletar";
+            this.deletarBtn.UseVisualStyleBackColor = true;
+            this.deletarBtn.Click += new System.EventHandler(this.deletarBtn_Click);
             // 
             // LivroCard
             // 
@@ -232,7 +232,7 @@
             this.Controls.Add(this.tituloLbl);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LivroCard";
-            this.Size = new System.Drawing.Size(211, 237);
+            this.Size = new System.Drawing.Size(203, 237);
             this.adminPanel.ResumeLayout(false);
             this.adminPanel.PerformLayout();
             this.ResumeLayout(false);

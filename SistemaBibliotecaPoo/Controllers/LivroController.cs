@@ -26,7 +26,8 @@ namespace SistemaBibliotecaPoo.Controllers
                 Autor = livroDto.Autor,
                 Categoria = livroDto.Categoria,
                 Preco = Convert.ToDouble(livroDto.Preco),
-                Quantidade = Convert.ToInt32(livroDto.Quantidade)
+                Quantidade = Convert.ToInt32(livroDto.Quantidade),
+                Disponivel = true
             };
 
             try

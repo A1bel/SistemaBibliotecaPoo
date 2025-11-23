@@ -32,13 +32,13 @@ namespace SistemaBibliotecaPoo.Views
             {
                 meusLivrosBtn.Visible = false;
                 CadastrarLivroBtn.Visible = true;
-                //reservarBtn.Visible = false;
+                usuariosBtn.Visible = true;
             }
             else if (_usuario is Leitor)
             {
                 meusLivrosBtn.Visible = true;
                 CadastrarLivroBtn.Visible = false;
-                //reservarBtn.Visible = true;
+                usuariosBtn.Visible = false;
             }
         }
 
@@ -85,6 +85,23 @@ namespace SistemaBibliotecaPoo.Views
         {
             OnLogout?.Invoke();
             this.Close();
+        }
+
+        private void usuariosBtn_Click(object sender, EventArgs e)
+        {
+            UsuariosForm frmUsuarios = new UsuariosForm();
+            this.Hide();
+            frmUsuarios.ShowDialog();
+            CarregarLivros();
+            this.Show();
+        }
+
+        private void alterarBtn_Click(object sender, EventArgs e)
+        {
+            using (EditarUsuario frmEdit = new EditarUsuario(_usuario.Id))
+            {
+                var result = frmEdit.ShowDialog();
+            }
         }
     }
 }

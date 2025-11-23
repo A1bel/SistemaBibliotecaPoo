@@ -1,6 +1,6 @@
 ﻿namespace SistemaBibliotecaPoo.Views
 {
-    partial class MeusLivros
+    partial class UsuariosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,51 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MeusLivrosDgv = new System.Windows.Forms.DataGridView();
             this.voltarBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.MeusLivrosDgv)).BeginInit();
+            this.usuariosDgv = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosDgv)).BeginInit();
             this.SuspendLayout();
-            // 
-            // MeusLivrosDgv
-            // 
-            this.MeusLivrosDgv.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.MeusLivrosDgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.MeusLivrosDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MeusLivrosDgv.Location = new System.Drawing.Point(12, 39);
-            this.MeusLivrosDgv.Name = "MeusLivrosDgv";
-            this.MeusLivrosDgv.RowHeadersWidth = 51;
-            this.MeusLivrosDgv.RowTemplate.Height = 24;
-            this.MeusLivrosDgv.Size = new System.Drawing.Size(763, 399);
-            this.MeusLivrosDgv.TabIndex = 0;
-            this.MeusLivrosDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MeusLivrosDgv_CellClick);
             // 
             // voltarBtn
             // 
-            this.voltarBtn.Location = new System.Drawing.Point(12, 10);
+            this.voltarBtn.Location = new System.Drawing.Point(26, 8);
             this.voltarBtn.Name = "voltarBtn";
-            this.voltarBtn.Size = new System.Drawing.Size(75, 23);
-            this.voltarBtn.TabIndex = 1;
+            this.voltarBtn.Size = new System.Drawing.Size(81, 33);
+            this.voltarBtn.TabIndex = 2;
             this.voltarBtn.Text = "Voltar";
             this.voltarBtn.UseVisualStyleBackColor = true;
             this.voltarBtn.Click += new System.EventHandler(this.voltarBtn_Click);
             // 
-            // MeusLivros
+            // usuariosDgv
+            // 
+            this.usuariosDgv.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.usuariosDgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usuariosDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usuariosDgv.Location = new System.Drawing.Point(26, 47);
+            this.usuariosDgv.Name = "usuariosDgv";
+            this.usuariosDgv.RowHeadersWidth = 51;
+            this.usuariosDgv.RowTemplate.Height = 24;
+            this.usuariosDgv.Size = new System.Drawing.Size(766, 391);
+            this.usuariosDgv.TabIndex = 3;
+            this.usuariosDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuariosDgv_CellClick);
+            // 
+            // UsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(822, 450);
+            this.Controls.Add(this.usuariosDgv);
             this.Controls.Add(this.voltarBtn);
-            this.Controls.Add(this.MeusLivrosDgv);
-            this.Name = "MeusLivros";
-            this.Text = "MeusLivros";
-            ((System.ComponentModel.ISupportInitialize)(this.MeusLivrosDgv)).EndInit();
+            this.Name = "UsuariosForm";
+            this.Text = "UsuariosForm";
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosDgv)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView MeusLivrosDgv;
         private System.Windows.Forms.Button voltarBtn;
+        private System.Windows.Forms.DataGridView usuariosDgv;
     }
 }
