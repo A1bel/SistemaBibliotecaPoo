@@ -23,7 +23,7 @@ namespace SistemaBibliotecaPoo
             {
                 Admin admin = new Admin(
                     "Administrador",
-                    "9999-9999",
+                    "99999999999",
                     "adm@adm.com",
                     "12345678"
                 );
