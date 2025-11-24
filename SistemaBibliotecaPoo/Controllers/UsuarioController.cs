@@ -193,7 +193,7 @@ namespace SistemaBibliotecaPoo.Controllers
 
                 if (string.IsNullOrWhiteSpace(usuarioDto.Senha))
                 {
-                    result.Erros.Add("senha", "Nova senha não informada");
+                    result.Erros.Add("senha", "Senha não informada");
                     result.Success = false;
                 }
                 else if (usuarioDto.Senha.Length < 8)
