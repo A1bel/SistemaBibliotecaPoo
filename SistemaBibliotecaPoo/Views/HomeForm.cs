@@ -98,7 +98,7 @@ namespace SistemaBibliotecaPoo.Views
 
         private void alterarBtn_Click(object sender, EventArgs e)
         {
-            using (EditarUsuario frmEdit = new EditarUsuario(_usuario.Id))
+            using (EditarUsuario frmEdit = new EditarUsuario(_usuario.Id, podeAlterarTipo: _usuario is Admin))
             {
                 var result = frmEdit.ShowDialog();
             }

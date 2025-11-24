@@ -50,10 +50,9 @@
             // 
             this.tituloLbl.AutoSize = true;
             this.tituloLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tituloLbl.Location = new System.Drawing.Point(31, 22);
-            this.tituloLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tituloLbl.Location = new System.Drawing.Point(23, 18);
             this.tituloLbl.Name = "tituloLbl";
-            this.tituloLbl.Size = new System.Drawing.Size(72, 22);
+            this.tituloLbl.Size = new System.Drawing.Size(58, 18);
             this.tituloLbl.TabIndex = 0;
             this.tituloLbl.Text = "tituloLbl";
             // 
@@ -61,19 +60,17 @@
             // 
             this.autorLbl.AutoSize = true;
             this.autorLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autorLbl.Location = new System.Drawing.Point(90, 87);
-            this.autorLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.autorLbl.Location = new System.Drawing.Point(68, 71);
             this.autorLbl.Name = "autorLbl";
-            this.autorLbl.Size = new System.Drawing.Size(61, 18);
+            this.autorLbl.Size = new System.Drawing.Size(52, 15);
             this.autorLbl.TabIndex = 1;
             this.autorLbl.Text = "autorLbl";
             // 
             // alugarBtn
             // 
-            this.alugarBtn.Location = new System.Drawing.Point(35, 145);
-            this.alugarBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.alugarBtn.Location = new System.Drawing.Point(26, 118);
             this.alugarBtn.Name = "alugarBtn";
-            this.alugarBtn.Size = new System.Drawing.Size(100, 28);
+            this.alugarBtn.Size = new System.Drawing.Size(75, 23);
             this.alugarBtn.TabIndex = 2;
             this.alugarBtn.Text = "Alugar";
             this.alugarBtn.UseVisualStyleBackColor = true;
@@ -83,10 +80,9 @@
             // 
             this.categoriaLbl.AutoSize = true;
             this.categoriaLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoriaLbl.Location = new System.Drawing.Point(113, 114);
-            this.categoriaLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.categoriaLbl.Location = new System.Drawing.Point(85, 93);
             this.categoriaLbl.Name = "categoriaLbl";
-            this.categoriaLbl.Size = new System.Drawing.Size(63, 18);
+            this.categoriaLbl.Size = new System.Drawing.Size(54, 15);
             this.categoriaLbl.TabIndex = 3;
             this.categoriaLbl.Text = "categLbl";
             // 
@@ -94,10 +90,9 @@
             // 
             this.precoLbl.AutoSize = true;
             this.precoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precoLbl.Location = new System.Drawing.Point(90, 58);
-            this.precoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.precoLbl.Location = new System.Drawing.Point(68, 47);
             this.precoLbl.Name = "precoLbl";
-            this.precoLbl.Size = new System.Drawing.Size(65, 18);
+            this.precoLbl.Size = new System.Drawing.Size(55, 15);
             this.precoLbl.TabIndex = 4;
             this.precoLbl.Text = "precoLbl";
             // 
@@ -105,10 +100,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(22, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 18);
+            this.label1.Size = new System.Drawing.Size(42, 15);
             this.label1.TabIndex = 8;
             this.label1.Text = "Preço:";
             // 
@@ -116,10 +110,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 114);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(22, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 18);
+            this.label2.Size = new System.Drawing.Size(63, 15);
             this.label2.TabIndex = 7;
             this.label2.Text = "Categoria:";
             // 
@@ -127,19 +120,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 87);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(22, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 18);
+            this.label3.Size = new System.Drawing.Size(38, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "Autor:";
             // 
             // editarLivroBtn
             // 
-            this.editarLivroBtn.Location = new System.Drawing.Point(8, 67);
-            this.editarLivroBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.editarLivroBtn.Location = new System.Drawing.Point(6, 54);
             this.editarLivroBtn.Name = "editarLivroBtn";
-            this.editarLivroBtn.Size = new System.Drawing.Size(87, 28);
+            this.editarLivroBtn.Size = new System.Drawing.Size(65, 23);
             this.editarLivroBtn.TabIndex = 9;
             this.editarLivroBtn.Text = "Editar";
             this.editarLivroBtn.UseVisualStyleBackColor = true;
@@ -153,19 +144,19 @@
             this.adminPanel.Controls.Add(this.label4);
             this.adminPanel.Controls.Add(this.deletarBtn);
             this.adminPanel.Controls.Add(this.editarLivroBtn);
-            this.adminPanel.Location = new System.Drawing.Point(-1, 135);
+            this.adminPanel.Location = new System.Drawing.Point(-1, 110);
+            this.adminPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.adminPanel.Name = "adminPanel";
-            this.adminPanel.Size = new System.Drawing.Size(201, 99);
+            this.adminPanel.Size = new System.Drawing.Size(151, 80);
             this.adminPanel.TabIndex = 10;
             // 
             // qtdLbl
             // 
             this.qtdLbl.AutoSize = true;
             this.qtdLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qtdLbl.Location = new System.Drawing.Point(127, 10);
-            this.qtdLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.qtdLbl.Location = new System.Drawing.Point(95, 8);
             this.qtdLbl.Name = "qtdLbl";
-            this.qtdLbl.Size = new System.Drawing.Size(47, 18);
+            this.qtdLbl.Size = new System.Drawing.Size(41, 15);
             this.qtdLbl.TabIndex = 15;
             this.qtdLbl.Text = "qtdLbl";
             // 
@@ -173,10 +164,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 32);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(20, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 18);
+            this.label5.Size = new System.Drawing.Size(44, 15);
             this.label5.TabIndex = 14;
             this.label5.Text = "Status:";
             // 
@@ -184,10 +174,9 @@
             // 
             this.statusLbl.AutoSize = true;
             this.statusLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusLbl.Location = new System.Drawing.Point(100, 32);
-            this.statusLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusLbl.Location = new System.Drawing.Point(75, 26);
             this.statusLbl.Name = "statusLbl";
-            this.statusLbl.Size = new System.Drawing.Size(67, 18);
+            this.statusLbl.Size = new System.Drawing.Size(56, 15);
             this.statusLbl.TabIndex = 13;
             this.statusLbl.Text = "statusLbl";
             // 
@@ -195,19 +184,17 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 10);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(20, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 18);
+            this.label4.Size = new System.Drawing.Size(74, 15);
             this.label4.TabIndex = 12;
             this.label4.Text = "Quantidade:";
             // 
             // deletarBtn
             // 
-            this.deletarBtn.Location = new System.Drawing.Point(103, 67);
-            this.deletarBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.deletarBtn.Location = new System.Drawing.Point(77, 54);
             this.deletarBtn.Name = "deletarBtn";
-            this.deletarBtn.Size = new System.Drawing.Size(87, 28);
+            this.deletarBtn.Size = new System.Drawing.Size(65, 23);
             this.deletarBtn.TabIndex = 10;
             this.deletarBtn.Text = "Deletar";
             this.deletarBtn.UseVisualStyleBackColor = true;
@@ -215,7 +202,7 @@
             // 
             // LivroCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -230,9 +217,8 @@
             this.Controls.Add(this.alugarBtn);
             this.Controls.Add(this.autorLbl);
             this.Controls.Add(this.tituloLbl);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LivroCard";
-            this.Size = new System.Drawing.Size(203, 237);
+            this.Size = new System.Drawing.Size(152, 192);
             this.adminPanel.ResumeLayout(false);
             this.adminPanel.PerformLayout();
             this.ResumeLayout(false);

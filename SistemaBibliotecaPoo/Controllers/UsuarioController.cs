@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Net.Mail;
 
 namespace SistemaBibliotecaPoo.Controllers
 {
@@ -155,10 +157,15 @@ namespace SistemaBibliotecaPoo.Controllers
                 result.Erros.Add("email", "Email não informado");
                 result.Success = false;
             }
+            else if (!EmailValido(usuarioDto.Email))
+            {
+                result.Erros.Add("email", "Formato de e-mail inválido");
+                result.Success = false;
+            }
             else
             {
                 Usuario existe = _usuarioRepositorio.BuscarPorEmail(usuarioDto.Email);
-                if(!isUpdate && existe != null)
+                if (!isUpdate && existe != null)
                 {
                     result.Erros.Add("email", "Já existe um usuário com este email");
                     result.Success = false;
@@ -174,9 +181,13 @@ namespace SistemaBibliotecaPoo.Controllers
             {
                 result.Erros.Add("telefone", "Telefone não informado");
                 result.Success = false;
+
+            }else if(!TelefoneValido(usuarioDto.Telefone)){
+                result.Success = false;
+                result.Erros.Add("telefone", "Use apenas números (11 dígitos).");
             }
 
-            bool alterandoSenha = !string.IsNullOrWhiteSpace(usuarioDto.Senha) || !string.IsNullOrWhiteSpace(usuarioDto.ConfirmarSenha);
+                bool alterandoSenha = !string.IsNullOrWhiteSpace(usuarioDto.Senha) || !string.IsNullOrWhiteSpace(usuarioDto.ConfirmarSenha);
             if (!isUpdate || alterandoSenha)
             {
 
@@ -205,7 +216,7 @@ namespace SistemaBibliotecaPoo.Controllers
                 if (!(string.IsNullOrWhiteSpace(usuarioDto.Senha) || string.IsNullOrWhiteSpace(usuarioDto.ConfirmarSenha))
                     && (usuarioDto.Senha.Length >= 8 && usuarioDto.ConfirmarSenha.Length >= 8) && usuarioDto.Senha != usuarioDto.ConfirmarSenha)
                 {
-                    result.Erros.Add("senha", "As senhas não coincidem.");
+                    result.Erros.Add("CSenha", "As senhas não coincidem.");
                     result.Success = false;
                 }
 
@@ -227,6 +238,17 @@ namespace SistemaBibliotecaPoo.Controllers
 
             return result;
         }
+
+        bool TelefoneValido(string telefone)
+        {
+            return Regex.IsMatch(telefone, @"^\d{11}$");
+        }
+
+        bool EmailValido(string email)
+        {
+            return Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        }
+
         
     }
 }

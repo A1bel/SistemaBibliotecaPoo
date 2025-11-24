@@ -57,9 +57,10 @@
             // 
             this.titulo.AutoSize = true;
             this.titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titulo.Location = new System.Drawing.Point(85, 44);
+            this.titulo.Location = new System.Drawing.Point(64, 36);
+            this.titulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(236, 36);
+            this.titulo.Size = new System.Drawing.Size(194, 29);
             this.titulo.TabIndex = 10;
             this.titulo.Text = "Editar Cadastro";
             // 
@@ -67,110 +68,122 @@
             // 
             this.quantidade.AutoSize = true;
             this.quantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantidade.Location = new System.Drawing.Point(14, 292);
+            this.quantidade.Location = new System.Drawing.Point(10, 237);
+            this.quantidade.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.quantidade.Name = "quantidade";
-            this.quantidade.Size = new System.Drawing.Size(141, 20);
+            this.quantidade.Size = new System.Drawing.Size(119, 17);
             this.quantidade.TabIndex = 15;
             this.quantidade.Text = "Confirme a senha";
             // 
             // confimarSenhaTxt
             // 
             this.confimarSenhaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confimarSenhaTxt.Location = new System.Drawing.Point(177, 285);
+            this.confimarSenhaTxt.Location = new System.Drawing.Point(133, 232);
+            this.confimarSenhaTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confimarSenhaTxt.Name = "confimarSenhaTxt";
             this.confimarSenhaTxt.PasswordChar = '*';
-            this.confimarSenhaTxt.Size = new System.Drawing.Size(285, 27);
+            this.confimarSenhaTxt.Size = new System.Drawing.Size(215, 23);
             this.confimarSenhaTxt.TabIndex = 5;
             // 
             // erroEmailLbl
             // 
             this.erroEmailLbl.AutoSize = true;
             this.erroEmailLbl.ForeColor = System.Drawing.Color.Red;
-            this.erroEmailLbl.Location = new System.Drawing.Point(482, 205);
+            this.erroEmailLbl.Location = new System.Drawing.Point(369, 167);
+            this.erroEmailLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.erroEmailLbl.Name = "erroEmailLbl";
-            this.erroEmailLbl.Size = new System.Drawing.Size(0, 16);
+            this.erroEmailLbl.Size = new System.Drawing.Size(0, 13);
             this.erroEmailLbl.TabIndex = 38;
             // 
             // preco
             // 
             this.preco.AutoSize = true;
             this.preco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.preco.Location = new System.Drawing.Point(439, 181);
+            this.preco.Location = new System.Drawing.Point(329, 147);
+            this.preco.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.preco.Name = "preco";
-            this.preco.Size = new System.Drawing.Size(51, 20);
+            this.preco.Size = new System.Drawing.Size(42, 17);
             this.preco.TabIndex = 13;
             this.preco.Text = "Email";
             // 
             // emailTxt
             // 
             this.emailTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTxt.Location = new System.Drawing.Point(496, 175);
+            this.emailTxt.Location = new System.Drawing.Point(372, 142);
+            this.emailTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.emailTxt.Name = "emailTxt";
-            this.emailTxt.Size = new System.Drawing.Size(281, 27);
+            this.emailTxt.Size = new System.Drawing.Size(212, 23);
             this.emailTxt.TabIndex = 3;
             // 
             // erroSenhaLbl
             // 
             this.erroSenhaLbl.AutoSize = true;
             this.erroSenhaLbl.ForeColor = System.Drawing.Color.Red;
-            this.erroSenhaLbl.Location = new System.Drawing.Point(165, 264);
+            this.erroSenhaLbl.Location = new System.Drawing.Point(130, 215);
+            this.erroSenhaLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.erroSenhaLbl.Name = "erroSenhaLbl";
-            this.erroSenhaLbl.Size = new System.Drawing.Size(0, 16);
+            this.erroSenhaLbl.Size = new System.Drawing.Size(0, 13);
             this.erroSenhaLbl.TabIndex = 35;
             // 
             // categoria
             // 
             this.categoria.AutoSize = true;
             this.categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoria.Location = new System.Drawing.Point(99, 237);
+            this.categoria.Location = new System.Drawing.Point(74, 193);
+            this.categoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.categoria.Name = "categoria";
-            this.categoria.Size = new System.Drawing.Size(56, 20);
+            this.categoria.Size = new System.Drawing.Size(49, 17);
             this.categoria.TabIndex = 14;
             this.categoria.Text = "Senha";
             // 
             // senhaTxt
             // 
             this.senhaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.senhaTxt.Location = new System.Drawing.Point(177, 234);
+            this.senhaTxt.Location = new System.Drawing.Point(133, 190);
+            this.senhaTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.senhaTxt.Name = "senhaTxt";
             this.senhaTxt.PasswordChar = '*';
-            this.senhaTxt.Size = new System.Drawing.Size(232, 27);
+            this.senhaTxt.Size = new System.Drawing.Size(175, 23);
             this.senhaTxt.TabIndex = 4;
             // 
             // erroTelefoneLbl
             // 
             this.erroTelefoneLbl.AutoSize = true;
             this.erroTelefoneLbl.ForeColor = System.Drawing.Color.Red;
-            this.erroTelefoneLbl.Location = new System.Drawing.Point(165, 210);
+            this.erroTelefoneLbl.Location = new System.Drawing.Point(130, 171);
+            this.erroTelefoneLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.erroTelefoneLbl.Name = "erroTelefoneLbl";
-            this.erroTelefoneLbl.Size = new System.Drawing.Size(0, 16);
+            this.erroTelefoneLbl.Size = new System.Drawing.Size(0, 13);
             this.erroTelefoneLbl.TabIndex = 32;
             // 
             // autor
             // 
             this.autor.AutoSize = true;
             this.autor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autor.Location = new System.Drawing.Point(82, 180);
+            this.autor.Location = new System.Drawing.Point(62, 146);
+            this.autor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autor.Name = "autor";
-            this.autor.Size = new System.Drawing.Size(73, 20);
+            this.autor.Size = new System.Drawing.Size(64, 17);
             this.autor.TabIndex = 12;
             this.autor.Text = "Telefone";
             // 
             // telefoneTxt
             // 
             this.telefoneTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.telefoneTxt.Location = new System.Drawing.Point(177, 180);
+            this.telefoneTxt.Location = new System.Drawing.Point(133, 146);
+            this.telefoneTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.telefoneTxt.Name = "telefoneTxt";
-            this.telefoneTxt.Size = new System.Drawing.Size(232, 27);
+            this.telefoneTxt.Size = new System.Drawing.Size(175, 23);
             this.telefoneTxt.TabIndex = 2;
             // 
             // cancelarBtn
             // 
             this.cancelarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelarBtn.ForeColor = System.Drawing.Color.Red;
-            this.cancelarBtn.Location = new System.Drawing.Point(445, 386);
+            this.cancelarBtn.Location = new System.Drawing.Point(334, 314);
+            this.cancelarBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cancelarBtn.Name = "cancelarBtn";
-            this.cancelarBtn.Size = new System.Drawing.Size(134, 38);
+            this.cancelarBtn.Size = new System.Drawing.Size(100, 31);
             this.cancelarBtn.TabIndex = 6;
             this.cancelarBtn.Text = "Cancelar";
             this.cancelarBtn.UseVisualStyleBackColor = true;
@@ -180,18 +193,20 @@
             // 
             this.erroNomeLbl.AutoSize = true;
             this.erroNomeLbl.ForeColor = System.Drawing.Color.Red;
-            this.erroNomeLbl.Location = new System.Drawing.Point(165, 151);
+            this.erroNomeLbl.Location = new System.Drawing.Point(130, 122);
+            this.erroNomeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.erroNomeLbl.Name = "erroNomeLbl";
-            this.erroNomeLbl.Size = new System.Drawing.Size(0, 16);
+            this.erroNomeLbl.Size = new System.Drawing.Size(0, 13);
             this.erroNomeLbl.TabIndex = 28;
             // 
             // cadastroBtn
             // 
             this.cadastroBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroBtn.ForeColor = System.Drawing.Color.ForestGreen;
-            this.cadastroBtn.Location = new System.Drawing.Point(632, 386);
+            this.cadastroBtn.Location = new System.Drawing.Point(474, 314);
+            this.cadastroBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cadastroBtn.Name = "cadastroBtn";
-            this.cadastroBtn.Size = new System.Drawing.Size(134, 38);
+            this.cadastroBtn.Size = new System.Drawing.Size(100, 31);
             this.cadastroBtn.TabIndex = 7;
             this.cadastroBtn.Text = "Salvar";
             this.cadastroBtn.UseVisualStyleBackColor = true;
@@ -201,27 +216,30 @@
             // 
             this.usuarioNome.AutoSize = true;
             this.usuarioNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuarioNome.Location = new System.Drawing.Point(102, 124);
+            this.usuarioNome.Location = new System.Drawing.Point(76, 101);
+            this.usuarioNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.usuarioNome.Name = "usuarioNome";
-            this.usuarioNome.Size = new System.Drawing.Size(53, 20);
+            this.usuarioNome.Size = new System.Drawing.Size(45, 17);
             this.usuarioNome.TabIndex = 11;
             this.usuarioNome.Text = "Nome";
             // 
             // nomeTxt
             // 
             this.nomeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeTxt.Location = new System.Drawing.Point(177, 121);
+            this.nomeTxt.Location = new System.Drawing.Point(133, 98);
+            this.nomeTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nomeTxt.Name = "nomeTxt";
-            this.nomeTxt.Size = new System.Drawing.Size(600, 27);
+            this.nomeTxt.Size = new System.Drawing.Size(451, 23);
             this.nomeTxt.TabIndex = 1;
             // 
             // erroCSenhaLbl
             // 
             this.erroCSenhaLbl.AutoSize = true;
             this.erroCSenhaLbl.ForeColor = System.Drawing.Color.Red;
-            this.erroCSenhaLbl.Location = new System.Drawing.Point(165, 319);
+            this.erroCSenhaLbl.Location = new System.Drawing.Point(130, 257);
+            this.erroCSenhaLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.erroCSenhaLbl.Name = "erroCSenhaLbl";
-            this.erroCSenhaLbl.Size = new System.Drawing.Size(0, 16);
+            this.erroCSenhaLbl.Size = new System.Drawing.Size(0, 13);
             this.erroCSenhaLbl.TabIndex = 42;
             // 
             // tipoCmb
@@ -232,18 +250,20 @@
             this.tipoCmb.Items.AddRange(new object[] {
             "Leitor",
             "Admin"});
-            this.tipoCmb.Location = new System.Drawing.Point(542, 289);
+            this.tipoCmb.Location = new System.Drawing.Point(406, 235);
+            this.tipoCmb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tipoCmb.Name = "tipoCmb";
-            this.tipoCmb.Size = new System.Drawing.Size(235, 28);
+            this.tipoCmb.Size = new System.Drawing.Size(177, 25);
             this.tipoCmb.TabIndex = 43;
             // 
             // tipoLbl
             // 
             this.tipoLbl.AutoSize = true;
             this.tipoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tipoLbl.Location = new System.Drawing.Point(492, 292);
+            this.tipoLbl.Location = new System.Drawing.Point(369, 237);
+            this.tipoLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tipoLbl.Name = "tipoLbl";
-            this.tipoLbl.Size = new System.Drawing.Size(41, 20);
+            this.tipoLbl.Size = new System.Drawing.Size(36, 17);
             this.tipoLbl.TabIndex = 44;
             this.tipoLbl.Text = "Tipo";
             // 
@@ -251,36 +271,39 @@
             // 
             this.erroSenhaALbl.AutoSize = true;
             this.erroSenhaALbl.ForeColor = System.Drawing.Color.Red;
-            this.erroSenhaALbl.Location = new System.Drawing.Point(602, 264);
+            this.erroSenhaALbl.Location = new System.Drawing.Point(405, 212);
+            this.erroSenhaALbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.erroSenhaALbl.Name = "erroSenhaALbl";
-            this.erroSenhaALbl.Size = new System.Drawing.Size(0, 16);
+            this.erroSenhaALbl.Size = new System.Drawing.Size(0, 13);
             this.erroSenhaALbl.TabIndex = 47;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(426, 233);
+            this.label3.Location = new System.Drawing.Point(320, 189);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 20);
+            this.label3.Size = new System.Drawing.Size(84, 17);
             this.label3.TabIndex = 46;
             this.label3.Text = "Senha atual";
             // 
             // senhaAtualTxt
             // 
             this.senhaAtualTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.senhaAtualTxt.Location = new System.Drawing.Point(542, 230);
+            this.senhaAtualTxt.Location = new System.Drawing.Point(406, 187);
+            this.senhaAtualTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.senhaAtualTxt.Name = "senhaAtualTxt";
             this.senhaAtualTxt.PasswordChar = '*';
-            this.senhaAtualTxt.Size = new System.Drawing.Size(235, 27);
+            this.senhaAtualTxt.Size = new System.Drawing.Size(177, 23);
             this.senhaAtualTxt.TabIndex = 45;
             // 
             // EditarUsuario
             // 
             this.AcceptButton = this.cadastroBtn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.erroSenhaALbl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.senhaAtualTxt);
@@ -304,6 +327,7 @@
             this.Controls.Add(this.usuarioNome);
             this.Controls.Add(this.nomeTxt);
             this.Controls.Add(this.titulo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EditarUsuario";
             this.Text = "EditarUsuario";
             this.Load += new System.EventHandler(this.EditarUsuario_Load);

@@ -47,7 +47,7 @@ namespace SistemaBibliotecaPoo.Views
             tituloTxt.Text = livro.Titulo;
             autorTxt.Text = livro.Autor;
             categoriaTxt.Text = livro.Categoria;
-            precoTxt.Text = livro.Preco.ToString();
+            precoTxt.Text = livro.Preco.ToString("F2");
             quantidadeTxt.Text = livro.Quantidade.ToString();
             disponivelBox.SelectedItem = livro.Disponivel ? "Disponível" : "Indisponível";
         }

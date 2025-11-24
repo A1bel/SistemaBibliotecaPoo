@@ -18,11 +18,15 @@ namespace SistemaBibliotecaPoo.Views
         private readonly UsuarioController _usuarioController;
         private Dictionary<string, Label> _errosLabels;
         private int _usuarioId;
-        public EditarUsuario(int usuarioId)
+        private bool _podeAlterarTipo;
+        //private int _usuarioLogadoId;
+        public EditarUsuario(int usuarioId, bool podeAlterarTipo = false)
         {
             InitializeComponent();
             _usuarioController = new UsuarioController();
             _usuarioId = usuarioId;
+            _podeAlterarTipo= podeAlterarTipo;
+            //_usuarioLogadoId = 0;
 
             _errosLabels = new Dictionary<string, Label>
             {
@@ -49,11 +53,12 @@ namespace SistemaBibliotecaPoo.Views
             telefoneTxt.Text = usuario.Telefone;
             emailTxt.Text = usuario.Email;
 
-            if(usuario is Admin)
+            if (_podeAlterarTipo)
             {
                 tipoCmb.Visible = true;
                 tipoLbl.Visible = true;
                 tipoCmb.SelectedItem = usuario is Admin ? "Admin" : "Leitor";
+              
             }
             else
             {
@@ -76,7 +81,7 @@ namespace SistemaBibliotecaPoo.Views
             UsuarioDto usuarioDto = new UsuarioDto
             {
                 Id = _usuarioId,
-                Tipo = tipoCmb.SelectedItem.ToString(),
+                Tipo = tipoCmb.SelectedItem != null ? tipoCmb.SelectedItem.ToString() : string.Empty,
                 Nome = nomeTxt.Text,
                 Telefone = telefoneTxt.Text,
                 Email = emailTxt.Text,

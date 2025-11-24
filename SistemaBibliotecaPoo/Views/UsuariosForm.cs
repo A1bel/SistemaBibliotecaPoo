@@ -86,7 +86,7 @@ namespace SistemaBibliotecaPoo.Views
             if (usuariosDgv.Columns[e.ColumnIndex].Name == "btnEditar")
             {
                 int usuarioId = (int)usuariosDgv.Rows[e.RowIndex].Cells["Id"].Value;
-                using (EditarUsuario frmEdit = new EditarUsuario(usuarioId))
+                using (EditarUsuario frmEdit = new EditarUsuario(usuarioId, podeAlterarTipo: true))
                 {
                     var result = frmEdit.ShowDialog();
                     CarregarUsuarios();
