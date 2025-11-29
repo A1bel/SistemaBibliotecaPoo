@@ -14,8 +14,12 @@ using System.Windows.Forms;
 
 namespace SistemaBibliotecaPoo
 {
+    /// UserControl que representa visualmente um livro na tela.
+    /// Comporta-se diferente dependendo do tipo do usuário (Admin / Leitor).
     public partial class LivroCard : UserControl
     {
+        // Evento disparado quando o livro é alterado, alugado ou excluído.
+        /// Permite que o form pai atualize a listagem automaticamente.
         public event Action LivroAtualizado;
         private readonly EmprestimoController _emprestimoController;
         private readonly LivroController _livroController;
@@ -26,6 +30,8 @@ namespace SistemaBibliotecaPoo
             _livroController = new LivroController();
         }
 
+        /// Recebe os dados do livro e configura o card visualmente.
+        /// Oculta ou exibe botões de acordo com o tipo de usuário.
         public void SetData(Livro livro, Usuario usuario)
         {
             if (usuario is Admin)
@@ -55,6 +61,7 @@ namespace SistemaBibliotecaPoo
             this.Tag = livro.Id;
         }
 
+        //Abre o form de editar (Somente Admin)
         private void editarLivroBtn_Click(object sender, EventArgs e)
         {
             int livroId = (int)this.Tag;
@@ -76,8 +83,10 @@ namespace SistemaBibliotecaPoo
 
             if (confirmar == DialogResult.Yes)
             {
+                //Chama o controller para realizar empréstimo
                 ResultadoOperacao result = _emprestimoController.RealizarEmprestimo((int)this.Tag);
 
+                //Se falhar mostra o erro
                 if (!result.Success)
                 {
                     MessageBox.Show(
@@ -89,10 +98,12 @@ namespace SistemaBibliotecaPoo
                     return;
                 }
 
+
                 LivroAtualizado?.Invoke();
             }
         }
 
+        //Deleta o livro (somente admin)
         private void deletarBtn_Click(object sender, EventArgs e)
         {
 
@@ -104,8 +115,10 @@ namespace SistemaBibliotecaPoo
             
             if(confirmar == DialogResult.Yes)
             {
+                //Chama controller para remover caso o livro não esteja emprestado
                 ResultadoOperacao result = _livroController.RemoverLivro((int)this.Tag);
 
+                //Caso falhar mostra o erro
                 if (!result.Success)
                 {
                     MessageBox.Show(

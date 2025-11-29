@@ -26,11 +26,13 @@ namespace SistemaBibliotecaPoo.Views
             CarregarUsuarios();
         }
 
+        // Configura colunas da tabela
         private void ConfigurarTabela()
         {
             usuariosDgv.AutoGenerateColumns = false;
             usuariosDgv.RowHeadersVisible = false;
 
+            // Coluna escondida apenas para manter o ID na memória
             usuariosDgv.Columns.Add(new DataGridViewTextBoxColumn
             { 
                 HeaderText = "IdUsuario",
@@ -39,6 +41,7 @@ namespace SistemaBibliotecaPoo.Views
                 Visible = false
             });
 
+            //Demais colunas
             usuariosDgv.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "Nome",
@@ -60,6 +63,7 @@ namespace SistemaBibliotecaPoo.Views
                 Width = 120
             });
 
+            // Coluna com botão para edição
             usuariosDgv.Columns.Add(new DataGridViewButtonColumn
             {
                 HeaderText = "Ações",
@@ -70,6 +74,7 @@ namespace SistemaBibliotecaPoo.Views
             });
         }
 
+        // Carrega todos os usuários do sistema e exibe no grid.
         private void CarregarUsuarios()
         {
             List<Usuario> usuarios = _usuarioController.BuscarTodosUsuarios();
@@ -81,6 +86,7 @@ namespace SistemaBibliotecaPoo.Views
             this.Close();
         }
 
+        // Evento disparado ao clicar na tabela — aqui tratamos o botão "Editar"
         private void usuariosDgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (usuariosDgv.Columns[e.ColumnIndex].Name == "btnEditar")

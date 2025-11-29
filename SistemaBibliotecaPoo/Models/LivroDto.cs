@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace SistemaBibliotecaPoo.Models
 {
+    // DTO usado para transferência de dados do usuário entre
+    // as camadas do sistema (View → Controller → Model/Repository).
+    // 
+    // Ele existe para receber e transportar informações digitadas
+    // no formulário.
     public class LivroDto
     {
         public int Id { get; set; }

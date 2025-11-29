@@ -17,6 +17,8 @@ namespace SistemaBibliotecaPoo
     public partial class Login : Form
     {
         private readonly UsuarioController _usuarioController;
+
+        // Evento disparado quando o login é bem-sucedido, enviando o usuário para a Home
         public event Action<Usuario> OnLoginSucesso;
         public Login()
         {
@@ -26,9 +28,13 @@ namespace SistemaBibliotecaPoo
 
         private void entrarBtn_Click(object sender, EventArgs e)
         {
+            //Limpa a mensagem de erro
             erroLbl.Text = "";
 
+            // Envia ao controller para validação e verificação de credenciais
             ResultadoOperacao result = _usuarioController.Login(emailTxt.Text, senhaTxt.Text);
+
+            // Se falhou, exibe o erro retornado
             if (!result.Success)
             {
                 erroLbl.Text = result.Erros["geral"];
@@ -37,13 +43,10 @@ namespace SistemaBibliotecaPoo
 
             OnLoginSucesso?.Invoke(result.UsuarioLogado);
             this.Close();
-            //HomeForm home = new HomeForm(result.UsuarioLogado);
-            //home.FormClosed += (s, args) => this.Close();
-            //home.Show();
-            //this.Hide();
 
         }
 
+        // Abre o formulário de cadastro de usuário
         private void contaLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CadastroUsuario frmCadastro = new CadastroUsuario();

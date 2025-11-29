@@ -14,15 +14,18 @@ namespace SistemaBibliotecaPoo.Controllers
     public class UsuarioController
     {
         private readonly UsuarioRepositorio _usuarioRepositorio = UsuarioRepositorio.Instancia;
-        
+
+        // Realiza o cadastro de um novo usuário recebendo os dados via DTO.
         public ResultadoOperacao CadastrarUsuario(UsuarioDto usuarioDto)
         {
+            //Chama o metodo para validar e se falhar retorna os erros sem cadastrar.
             ResultadoOperacao result = ValidarUsuario(usuarioDto);
             if (!result.Success)
                 return result;
 
             try
             {
+                // Criação do perfil dinamicamente conforme o tipo informado no DTO
                 Usuario usuario = PerfilFactory.CriarUsuario(usuarioDto.Tipo, usuarioDto.Nome, usuarioDto.Telefone, usuarioDto.Email, usuarioDto.Senha);
                 _usuarioRepositorio.Adicionar(usuario);
             }
@@ -34,10 +37,12 @@ namespace SistemaBibliotecaPoo.Controllers
                 return result;
         }
 
+        // Autentica um usuário no sistema comparando email e senha.
         public ResultadoOperacao Login(string email, string senha)
         {
             ResultadoOperacao result = new ResultadoOperacao { Success = true };    
 
+            //Validação básica dos campos
             if(string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senha))
             {
                 result.Erros.Add("geral", "Preencha todos os campos");
@@ -47,6 +52,7 @@ namespace SistemaBibliotecaPoo.Controllers
 
             try
             {
+                //busca o usuario por email, verifica se ele já existe e verifica se as credenciais batem.
                 Usuario usuario = _usuarioRepositorio.BuscarPorEmail(email);
                 if(usuario == null || usuario.Senha != senha)
                 {
@@ -65,20 +71,24 @@ namespace SistemaBibliotecaPoo.Controllers
             return result;
         }
 
+        // Busca um usuário pelo ID
         public Usuario BuscarUsuario(int id)
         {
             return _usuarioRepositorio.Buscar(id);
         }
 
+        // Retorna todos os usuários cadastrados
         public List<Usuario> BuscarTodosUsuarios()
         {
             return _usuarioRepositorio.BuscarTodos();
         }
 
+        // Atualiza os dados de um usuário existente.
         public ResultadoOperacao AtualizarUsuario(UsuarioDto usuarioDto)
         {
             ResultadoOperacao result = new ResultadoOperacao();
 
+            // Verifica se o usuário com o ID informado existe
             Usuario existente = _usuarioRepositorio.Buscar(usuarioDto.Id);
             if (existente == null)
             {
@@ -87,6 +97,7 @@ namespace SistemaBibliotecaPoo.Controllers
                 return result;
             }
 
+            // Valida com regras específicas de atualização
             result = ValidarUsuario(usuarioDto, true);
             if (!result.Success)
                 return result;
@@ -98,16 +109,17 @@ namespace SistemaBibliotecaPoo.Controllers
             if (!string.IsNullOrWhiteSpace(usuarioDto.Senha))
                 existente.Senha = usuarioDto.Senha;
 
-            if(usuarioDto.Tipo != existente.GetType().Name) // se o tipo mudou
+            // Caso o tipo tenha mudado (Admin <-> Leitor) cria um novo objeto substituindo o antigo
+            if (usuarioDto.Tipo != existente.GetType().Name) 
     {
                 Usuario novoUsuario;
                 if (usuarioDto.Tipo == "Admin")
                     novoUsuario = new Admin(existente.Nome, existente.Telefone, existente.Email, existente.Senha);
-                else // Leitor
+                else 
                     novoUsuario = new Leitor(existente.Nome, existente.Telefone, existente.Email, existente.Senha);
 
-                novoUsuario.Id = existente.Id; // mantém o mesmo Id
-                existente = novoUsuario; // substitui a referência
+                novoUsuario.Id = existente.Id;
+                existente = novoUsuario;
             }
 
             try
@@ -121,6 +133,7 @@ namespace SistemaBibliotecaPoo.Controllers
                 return result;
         }
 
+        // Remove um usuário pelo ID.
         public ResultadoOperacao RemoverUsuario(int id)
         {
             ResultadoOperacao result = new ResultadoOperacao { Success = true };
@@ -142,16 +155,19 @@ namespace SistemaBibliotecaPoo.Controllers
             return result;
         }
 
+        // Valida dados do usuário tanto em cadastro quanto edição.
         private ResultadoOperacao ValidarUsuario(UsuarioDto usuarioDto, bool isUpdate = false)
         {
             ResultadoOperacao result = new ResultadoOperacao { Success = true };
 
+            //Valida nome
             if (string.IsNullOrWhiteSpace(usuarioDto.Nome))
             {
                 result.Erros.Add("nome", "Nome não informado");
                 result.Success = false;
             }
 
+            //Valida email e verifica se ele já existe para evitar duplicação
             if (string.IsNullOrWhiteSpace(usuarioDto.Email))
             {
                 result.Erros.Add("email", "Email não informado");
@@ -177,6 +193,7 @@ namespace SistemaBibliotecaPoo.Controllers
                 }
             }
 
+            //Valida telefone
             if (string.IsNullOrWhiteSpace(usuarioDto.Telefone))
             {
                 result.Erros.Add("telefone", "Telefone não informado");
@@ -187,7 +204,10 @@ namespace SistemaBibliotecaPoo.Controllers
                 result.Erros.Add("telefone", "Use apenas números (11 dígitos).");
             }
 
-                bool alterandoSenha = !string.IsNullOrWhiteSpace(usuarioDto.Senha) || !string.IsNullOrWhiteSpace(usuarioDto.ConfirmarSenha);
+            //Verifica se a senha está sendo alterada
+            bool alterandoSenha = !string.IsNullOrWhiteSpace(usuarioDto.Senha) || !string.IsNullOrWhiteSpace(usuarioDto.ConfirmarSenha);
+
+            // Caso seja cadastro ou alteração explícita de senha
             if (!isUpdate || alterandoSenha)
             {
 
@@ -220,6 +240,7 @@ namespace SistemaBibliotecaPoo.Controllers
                     result.Success = false;
                 }
 
+                // Se está atualizando e alterando senha, validar a senha atual
                 if (isUpdate && alterandoSenha && string.IsNullOrWhiteSpace(usuarioDto.SenhaAtual))
                 {
                     result.Erros.Add("senhaAtual", "Senha atual não informada.");

@@ -22,12 +22,13 @@ namespace SistemaBibliotecaPoo.Controllers
             _livroRepositorio = LivroRepositorio.Instancia;
         }
 
+        // Realiza o pedido de empréstimo do livro informado pelo ID.
         public ResultadoOperacao RealizarEmprestimo(int livroId)
         {
             ResultadoOperacao result = new ResultadoOperacao { Success = true };
             try
             {
-
+                //Busca o livro e verifica se ele existe.
                 Livro livro = _livroRepositorio.Buscar(livroId);
                 if (livro == null)
                 {
@@ -36,6 +37,7 @@ namespace SistemaBibliotecaPoo.Controllers
                     return result;
                 }
 
+                //Verifica se o livro está disponível.
                 if (!livro.Disponivel)
                 {
                     result.Erros.Add("geral", "Este livro não está disponível no momento.");
@@ -43,6 +45,7 @@ namespace SistemaBibliotecaPoo.Controllers
                     return result;
                 }
 
+                //Verifica se o livro está em estoque.
                 if (livro.Quantidade <= 0)
                 {
                     result.Erros.Add("geral", "Este livro não está disponível no momento.");
@@ -50,6 +53,7 @@ namespace SistemaBibliotecaPoo.Controllers
                     return result;
                 }
 
+                //Verifica se o livro já está emprestado para este usuário.
                 Emprestimo emprestimoAtivo = _emprestimoRepositorio.BuscarEmprestimoAtivo(_usuarioLogado.Id, livroId);
                 if (emprestimoAtivo != null)
                 {
@@ -80,13 +84,16 @@ namespace SistemaBibliotecaPoo.Controllers
             return result;
         }
 
+        // Realiza a devolução do livro emprestado
         public ResultadoOperacao DevolverLivro(int idLivro)
         {
                 ResultadoOperacao result = new ResultadoOperacao { Success = true };
             try
             {
+                // Busca empréstimo ativo do usuário para o livro informado
                 Emprestimo emprestimo = _emprestimoRepositorio.BuscarEmprestimoAtivo(_usuarioLogado.Id, idLivro);
 
+                //Verifica se o empréstimo existe.
                 if (emprestimo == null)
                 {
                     result.Erros.Add("geral", "Este livro não está emprestado.");
@@ -112,6 +119,7 @@ namespace SistemaBibliotecaPoo.Controllers
             return result;
         }
 
+        // Retorna lista de empréstimos ativos do usuário atual formatada para exibição
         public List<object> ObterEmprestimosDoUsuario()
         {
             List<Emprestimo> emprestimos = _emprestimoRepositorio

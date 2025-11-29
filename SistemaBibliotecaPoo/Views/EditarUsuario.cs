@@ -19,15 +19,15 @@ namespace SistemaBibliotecaPoo.Views
         private Dictionary<string, Label> _errosLabels;
         private int _usuarioId;
         private bool _podeAlterarTipo;
-        //private int _usuarioLogadoId;
         public EditarUsuario(int usuarioId, bool podeAlterarTipo = false)
         {
             InitializeComponent();
             _usuarioController = new UsuarioController();
             _usuarioId = usuarioId;
             _podeAlterarTipo= podeAlterarTipo;
-            //_usuarioLogadoId = 0;
 
+            // Dicionário que liga o nome do campo à label correspondente de erro no formulário
+            // Isso evita vários IFs e facilita iterar erros retornados pelo controller
             _errosLabels = new Dictionary<string, Label>
             {
                 { "nome", erroNomeLbl },
@@ -41,7 +41,8 @@ namespace SistemaBibliotecaPoo.Views
 
         private void EditarUsuario_Load(object sender, EventArgs e)
         {
-           Usuario usuario = _usuarioController.BuscarUsuario(_usuarioId);
+            //Busca o usuário e verifica se ele existe
+            Usuario usuario = _usuarioController.BuscarUsuario(_usuarioId);
             if (usuario == null)
             {
                 MessageBox.Show("Usuário não encontrado");
@@ -49,10 +50,12 @@ namespace SistemaBibliotecaPoo.Views
                 return;
             }
 
+            // Preenche os campos com os dados do usuário a ser editado
             nomeTxt.Text = usuario.Nome;
             telefoneTxt.Text = usuario.Telefone;
             emailTxt.Text = usuario.Email;
 
+            //Altera a visibilidade do campo tipo de acordo com o tipo de usuário
             if (_podeAlterarTipo)
             {
                 tipoCmb.Visible = true;
@@ -75,9 +78,11 @@ namespace SistemaBibliotecaPoo.Views
 
         private void cadastroBtn_Click(object sender, EventArgs e)
         {
+            // Limpa mensagens de erro antes de tentar atualizar
             foreach (var lbl in _errosLabels.Values)
                 lbl.Text = "";
 
+            // Captura dados preenchidos no formulário
             UsuarioDto usuarioDto = new UsuarioDto
             {
                 Id = _usuarioId,
@@ -90,6 +95,7 @@ namespace SistemaBibliotecaPoo.Views
                 SenhaAtual = senhaAtualTxt.Text
             };
 
+            // Envia ao controller para validação e atualização
             ResultadoOperacao result = _usuarioController.AtualizarUsuario(usuarioDto);
             if (!result.Success)
             {

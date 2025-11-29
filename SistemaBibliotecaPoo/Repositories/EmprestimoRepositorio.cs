@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace SistemaBibliotecaPoo.Repositories
 {
+    // Repositório responsável por armazenar, acessar e gerenciar os Emprestimos.
+    // É um Singleton, garantindo apenas uma instância centralizada em todo o sistema.
     public class EmprestimoRepositorio
     {
         private static EmprestimoRepositorio _instancia;
@@ -33,6 +35,7 @@ namespace SistemaBibliotecaPoo.Repositories
             }
         }
 
+        // Adiciona um novo emprestimo, atribui um ID sequencial e salva no arquivo.
         public void Adicionar(Emprestimo emprestimo)
         {
             emprestimo.Id = _proximoId++;
@@ -40,16 +43,22 @@ namespace SistemaBibliotecaPoo.Repositories
             Salvar();
         }
 
+        // Busca um emprestimo pelo ID.
+        // Retorna null caso não encontre.
         public Emprestimo Buscar(int id)
         {
             return _emprestimos.Find(u => u.Id == id);
         }
 
+        // Busca um emprestimo pelo ID de um livro.
+        // Retorna null caso não encontre.
         public Emprestimo BuscarPorLivro(int livroId)
         {
             return _emprestimos.Find(u => u.LivroId == livroId);
         }
 
+        // Retorna um emprestimo ativo de determinado usuário e de determinado livro,
+        // usado para verificar se o usuário já pegou determinado livro emprestado.
         public Emprestimo BuscarEmprestimoAtivo(int usuarioId, int livroId)
         {
             return _emprestimos
@@ -60,11 +69,14 @@ namespace SistemaBibliotecaPoo.Repositories
                 );
         }
 
+        // Retorna uma nova lista com todos os emprestimos cadastrados.
+        // (Evita que a lista original seja alterada por fora)
         public List<Emprestimo> BuscarTodos()
         {
             return new List<Emprestimo>(_emprestimos);
         }
 
+        // Retorna uma nova lista com todos os emprestimos ativos de um determinado usuário.
         public List<Emprestimo> ObterEmprestimosAbertosPorUsuario(int usuarioId)
         {
             return BuscarTodos()
@@ -72,6 +84,7 @@ namespace SistemaBibliotecaPoo.Repositories
                 .ToList();
         }
 
+        // Retorna uma nova lista com todos os emprestimos ativos de um determinado livro.
         public List<Emprestimo> ObterEmprestimosAbertosPorLivro(int livroId)
         {
             return BuscarTodos()
@@ -79,6 +92,8 @@ namespace SistemaBibliotecaPoo.Repositories
                 .ToList();
         }
 
+        // Atualiza as informações de um emprestimo já existente.
+        // Lança erro caso não seja encontrado.
         public void Atualizar(Emprestimo emprestimoAtualizado)
         {
             var existente = Buscar(emprestimoAtualizado.Id);
@@ -89,6 +104,8 @@ namespace SistemaBibliotecaPoo.Repositories
             Salvar();
         }
 
+        // Remove emprestimo pelo ID.
+        // Caso não exista, lança exceção
         public void Remover(int id)
         {
             Emprestimo emprestimo = Buscar(id);
@@ -99,6 +116,9 @@ namespace SistemaBibliotecaPoo.Repositories
             }
 
         }
+
+        // Carrega o arquivo JSON contendo emprestimos salvos.
+        // Se não existir, retorna uma lista vazia.
         private List<Emprestimo> Carregar()
         {
             if(!File.Exists(_caminhoArquivo))
@@ -108,6 +128,7 @@ namespace SistemaBibliotecaPoo.Repositories
             return JsonConvert.DeserializeObject<List<Emprestimo>>(json, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All }) ?? new List<Emprestimo>();
         }
 
+        // Salva todos os emprestimos no arquivo JSON
         private void Salvar()
         {
             var json = JsonConvert.SerializeObject(_emprestimos, Formatting.Indented, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All });

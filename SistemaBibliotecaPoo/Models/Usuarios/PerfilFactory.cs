@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace SistemaBibliotecaPoo.Models.Usuarios
 {
+    // Fábrica responsável por criar instâncias de usuários
+    // de acordo com o tipo informado.
     public static class PerfilFactory
     {
         public static Usuario CriarUsuario(string tipo, string nome, string telefone, string email, string senha)

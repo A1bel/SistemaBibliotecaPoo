@@ -31,11 +31,13 @@ namespace SistemaBibliotecaPoo.Views
             CarregarEmprestimos();
         }
 
+        // Configura colunas da tabela
         private void ConfigurarTabela()
         {
             MeusLivrosDgv.AutoGenerateColumns = false;
             MeusLivrosDgv.RowHeadersVisible = false;
 
+            // ID do empréstimo (oculto — usado internamente para devolução)
             MeusLivrosDgv.Columns.Add(new DataGridViewTextBoxColumn
             { 
                 HeaderText = "IdEmprestimo",
@@ -44,6 +46,7 @@ namespace SistemaBibliotecaPoo.Views
                 Visible = false
             });
 
+            // Demais colunas exibidas ao usuário
             MeusLivrosDgv.Columns.Add(new DataGridViewTextBoxColumn
             { 
                 HeaderText = "Título",
@@ -65,6 +68,7 @@ namespace SistemaBibliotecaPoo.Views
                 Width = 120
             });
 
+            // Botão de ação para devolução
             MeusLivrosDgv.Columns.Add(new DataGridViewButtonColumn
             {
                 HeaderText = "Ações",
@@ -75,12 +79,14 @@ namespace SistemaBibliotecaPoo.Views
             });
         }
 
+        // Carrega todos os empréstimos pertencentes ao usuário logado
         private void CarregarEmprestimos()
         {
             var lista = _emprestimoController.ObterEmprestimosDoUsuario();
             MeusLivrosDgv.DataSource = lista;
         }
 
+        // Evento disparado ao clicar na tabela — aqui tratamos o botão "Devolver"
         private void MeusLivrosDgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (MeusLivrosDgv.Columns[e.ColumnIndex].Name == "btnDevolver")
@@ -96,6 +102,8 @@ namespace SistemaBibliotecaPoo.Views
                 if (confirmar == DialogResult.Yes)
                 {
                     var emprestimo = _emprestimoRepositorio.Buscar(emprestimoId);
+
+                    // Controller faz a devolução e retorna resultado validado
                     var resposta = _emprestimoController.DevolverLivro(emprestimo.LivroId);
 
                     if (!resposta.Success)

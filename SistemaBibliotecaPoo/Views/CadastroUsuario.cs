@@ -23,6 +23,9 @@ namespace SistemaBibliotecaPoo.Views
             InitializeComponent();
             _usuarioController = new UsuarioController();
 
+
+            // Dicionário que liga o nome do campo à label correspondente de erro no formulário
+            // Isso evita vários IFs e facilita iterar erros retornados pelo controller
             _errosLabels = new Dictionary<string, Label>
             {
                 { "nome", erroNomeLbl },
@@ -35,9 +38,11 @@ namespace SistemaBibliotecaPoo.Views
 
         private void salvarBtn_Click(object sender, EventArgs e)
         {
+            // Limpa mensagens de erro visuais antes de processar o cadastro
             foreach (var lbl in _errosLabels.Values)
                 lbl.Text = "";
 
+            // Cria o DTO com os valores informados pelo usuário
             UsuarioDto usuario = new UsuarioDto
             {
                 Tipo = "leitor",
@@ -48,7 +53,10 @@ namespace SistemaBibliotecaPoo.Views
                 ConfirmarSenha = confimarSenhaTxt.Text,
             };
 
+            // Envia para o controller validar e cadastrar
             ResultadoOperacao result = _usuarioController.CadastrarUsuario(usuario);
+
+            // Caso existam erros, exibe cada um na label correspondente
             if(!result.Success)
             {
                 foreach (var erro in result.Erros)

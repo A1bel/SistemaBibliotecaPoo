@@ -24,6 +24,8 @@ namespace SistemaBibliotecaPoo.Views
             _livroController = new LivroController();
             _livroId = id;
 
+            // Dicionário que liga o nome do campo à label correspondente de erro no formulário
+            // Isso evita vários IFs e facilita iterar erros retornados pelo controller
             _errosLabels = new Dictionary<string, Label>
             {
                 {"titulo", erroTituloLbl },
@@ -36,6 +38,7 @@ namespace SistemaBibliotecaPoo.Views
 
         private void EdicaoLivros_Load(object sender, EventArgs e)
         {
+            //Busca o livro e verifica se ele existe
             Livro livro = _livroController.BuscarLivro(_livroId);
             if(livro == null)
             {
@@ -44,6 +47,7 @@ namespace SistemaBibliotecaPoo.Views
                 return;
             }
 
+            // Preenche os campos com os dados do livro a ser editado
             tituloTxt.Text = livro.Titulo;
             autorTxt.Text = livro.Autor;
             categoriaTxt.Text = livro.Categoria;
@@ -59,9 +63,11 @@ namespace SistemaBibliotecaPoo.Views
 
         private void salvarEditarBtn_Click(object sender, EventArgs e)
         {
+            // Limpa mensagens de erro antes de tentar atualizar
             foreach (var lbl in _errosLabels.Values)
                 lbl.Text = "";
 
+            // Captura dados preenchidos no formulário
             LivroDto livro = new LivroDto
             {
                 Id = _livroId,
@@ -73,7 +79,10 @@ namespace SistemaBibliotecaPoo.Views
                 Disponivel = disponivelBox.Text == "Disponível"
             };
 
+            // Envia ao controller para validação e atualização
             ResultadoOperacao result = _livroController.AtualizarLivro(livro);
+
+            // Caso existam erros, exibe cada um na label correspondente
             if (!result.Success)
             {
                 foreach (var erro in result.Erros)

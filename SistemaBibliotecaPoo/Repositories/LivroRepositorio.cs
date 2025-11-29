@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace SistemaBibliotecaPoo.Repositories
 {
-    public  class LivroRepositorio
+    // Repositório responsável por armazenar, acessar e gerenciar os Livros.
+    // É um Singleton, garantindo apenas uma instância centralizada em todo o sistema.
+    public class LivroRepositorio
     {
         private static LivroRepositorio _instancia;
         private List<Livro> _livros;
@@ -33,6 +35,7 @@ namespace SistemaBibliotecaPoo.Repositories
             }
         }
 
+        // Adiciona um novo livro, atribui um ID sequencial e salva no arquivo.
         public void Adicionar(Livro livro)
         {
             livro.Id = _proximoId++;
@@ -40,22 +43,30 @@ namespace SistemaBibliotecaPoo.Repositories
             Salvar();
         }
 
+        // Busca um livro pelo ID.
+        // Retorna null caso não encontre.
         public Livro Buscar(int id)
         {
             return _livros.Find(l => l.Id == id);
         }
 
+        // Retorna uma nova lista com todos os livros cadastrados.
+        // (Evita que a lista original seja alterada por fora)
         public List<Livro> BuscarTodos()
         {
             return new List<Livro>(_livros);
         }
 
+        // Retorna uma nova lista com todos os livros disponíveis.
         public List<Livro> BuscarDisponiveis()
         {
             return new List<Livro>(_livros)
                 .Where(l => l.Disponivel && l.Quantidade > 0)
                 .ToList();
         }
+
+        // Atualiza as informações de um livro já existente.
+        // Lança erro caso não seja encontrado.
         public void Atualizar(Livro livroAtualizado)
         {
             var existente = Buscar(livroAtualizado.Id);
@@ -66,6 +77,8 @@ namespace SistemaBibliotecaPoo.Repositories
             Salvar();
         }
 
+        // Remove livro pelo ID.
+        // Caso não exista, lança exceção
         public void Remover(int id)
         {
             Livro livro = Buscar(id);
@@ -76,6 +89,9 @@ namespace SistemaBibliotecaPoo.Repositories
             
 
         }
+
+        // Carrega o arquivo JSON contendo livros salvos.
+        // Se não existir, retorna uma lista vazia.
         private List<Livro> Carregar()
         {
             if(!File.Exists(_caminhoArquivo))
@@ -85,6 +101,7 @@ namespace SistemaBibliotecaPoo.Repositories
             return JsonConvert.DeserializeObject<List<Livro>>(json, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All }) ?? new List<Livro>();
         }
 
+        // Salva todos os livros no arquivo JSON
         private void Salvar()
         {
             var json = JsonConvert.SerializeObject(_livros, Formatting.Indented, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All });

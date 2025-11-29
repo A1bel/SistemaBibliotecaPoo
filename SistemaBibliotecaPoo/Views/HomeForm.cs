@@ -17,6 +17,8 @@ namespace SistemaBibliotecaPoo.Views
     {
         private readonly LivroController _livroController;
         private Usuario _usuario;
+
+        // Evento disparado quando o usuário solicita logout
         public event Action OnLogout;
         public HomeForm(Usuario usuario)
         {
@@ -25,6 +27,7 @@ namespace SistemaBibliotecaPoo.Views
             _usuario = usuario;
         }
 
+        // Carrega a interface conforme o tipo de usuário (Admin / Leitor)
         private void HomeForm_Load(object sender, EventArgs e)
         {
             CarregarLivros();
@@ -42,6 +45,7 @@ namespace SistemaBibliotecaPoo.Views
             }
         }
 
+        // Lista os livros no painel da home, variando conforme o tipo de usuário
         private void CarregarLivros()
         {
             flowLivrosPanel.Controls.Clear();
@@ -62,15 +66,18 @@ namespace SistemaBibliotecaPoo.Views
                     flowLivrosPanel.Controls.Add(card);
                 }
         }
+
+        // Abre o formulário de cadastro de livros (somente Admin)
         private void CadastrarLivroBtn_Click(object sender, EventArgs e)
         {
             using(CadastroLivros frmCadastro = new CadastroLivros())
             {
                 frmCadastro.ShowDialog();
-                CarregarLivros();
+                CarregarLivros();//Atualiza interface após cadastro.
             }
         }
 
+        // Abre os livros emprestados pelo usuário atual
         private void meusLivrosBtn_Click(object sender, EventArgs e)
         {
             MeusLivros meusLivros = new MeusLivros(_usuario);
@@ -81,12 +88,14 @@ namespace SistemaBibliotecaPoo.Views
 
         }
 
+        //Logout
         private void sairBtn_Click(object sender, EventArgs e)
         {
-            OnLogout?.Invoke();
+            OnLogout?.Invoke();//Notifica
             this.Close();
         }
 
+        //Gerenciamento de usuários (somente Admin)
         private void usuariosBtn_Click(object sender, EventArgs e)
         {
             UsuariosForm frmUsuarios = new UsuariosForm();
@@ -96,6 +105,7 @@ namespace SistemaBibliotecaPoo.Views
             this.Show();
         }
 
+        //Abre a tela de editar o próprio usuário
         private void alterarBtn_Click(object sender, EventArgs e)
         {
             using (EditarUsuario frmEdit = new EditarUsuario(_usuario.Id, podeAlterarTipo: _usuario is Admin))
