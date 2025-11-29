@@ -11,8 +11,14 @@ namespace SistemaBibliotecaPoo.Controllers
 {
     public class LivroController
     {
-        private readonly LivroRepositorio _livroRepositorio = LivroRepositorio.Instancia;
-        private readonly EmprestimoRepositorio _emprestimoRepositorio = EmprestimoRepositorio.Instancia;
+        private readonly LivroRepositorio _livroRepositorio;
+        private readonly EmprestimoRepositorio _emprestimoRepositorio;
+
+        public LivroController()
+        {
+            _livroRepositorio = LivroRepositorio.Instancia;
+            _emprestimoRepositorio = EmprestimoRepositorio.Instancia;
+        }
 
         // Realiza o cadastro de um novo livro recebendo os dados via DTO.
         public ResultadoOperacao CadastrarLivro(LivroDto livroDto)

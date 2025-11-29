@@ -13,7 +13,12 @@ namespace SistemaBibliotecaPoo.Controllers
 {
     public class UsuarioController
     {
-        private readonly UsuarioRepositorio _usuarioRepositorio = UsuarioRepositorio.Instancia;
+        private readonly UsuarioRepositorio _usuarioRepositorio;
+
+        public UsuarioController()
+        {
+            _usuarioRepositorio = UsuarioRepositorio.Instancia;
+        }
 
         // Realiza o cadastro de um novo usuário recebendo os dados via DTO.
         public ResultadoOperacao CadastrarUsuario(UsuarioDto usuarioDto)
