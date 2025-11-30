@@ -16,15 +16,11 @@ namespace SistemaBibliotecaPoo.Views
     public partial class MeusLivros : Form
     {
         private readonly Usuario _usuarioLogado;
-        private readonly EmprestimoRepositorio _emprestimoRepositorio;
-        private readonly LivroRepositorio _livroRepositorio;
         private readonly EmprestimoController _emprestimoController;
         public MeusLivros(Usuario usuario)
         {
             InitializeComponent();
             _usuarioLogado = usuario;
-            _emprestimoRepositorio = EmprestimoRepositorio.Instancia;
-            _livroRepositorio = LivroRepositorio.Instancia;
             _emprestimoController = new EmprestimoController(_usuarioLogado);
 
             ConfigurarTabela();
@@ -101,7 +97,7 @@ namespace SistemaBibliotecaPoo.Views
 
                 if (confirmar == DialogResult.Yes)
                 {
-                    var emprestimo = _emprestimoRepositorio.Buscar(emprestimoId);
+                    var emprestimo = _emprestimoController.BuscarEmprestimo(emprestimoId);
 
                     // Controller faz a devolução e retorna resultado validado
                     var resposta = _emprestimoController.DevolverLivro(emprestimo.LivroId);

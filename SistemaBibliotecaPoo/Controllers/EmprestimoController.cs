@@ -142,5 +142,10 @@ namespace SistemaBibliotecaPoo.Controllers
 
             return lista;
         }
+
+        public Emprestimo BuscarEmprestimo(int id)
+        {
+            return _emprestimoRepositorio.Buscar(id);
+        }
     }
 }
